@@ -8,7 +8,7 @@ html
     link(href='http://fonts.googleapis.com/css?family=Lora:regular,bold&v1', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Caudex:regular,bold&v1', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold&v1', rel='stylesheet', type='text/css')
-    // <link href='http://fonts.googleapis.com/css?family=Droid+Serif&v1' rel='stylesheet' type='text/css'> 
+    // <link href='http://fonts.googleapis.com/css?family=Droid+Serif&v1' rel='stylesheet' type='text/css'>
     link(rel='stylesheet', href='css/livereload.css', type='text/css', media='screen', title='main stylesheet', charset='utf-8')
     script(type='text/javascript')
           var _gaq = _gaq || [];
@@ -19,7 +19,7 @@ html
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
-        
+
   body
     header
       .content
@@ -73,11 +73,11 @@ html
           | Thanks! Please also sign up for our newsletter to receive new build
           | notifications and useful updates.
 
-        // Included plugins: 
+        // Included plugins:
 
         h3
           span Windows?
-          a.download(href='http://download.livereload.com/LiveReload-0.0.3-Setup.exe') Try LiveReload 0.0.3 Pre-Alpha
+          a.download(href='http://download.livereload.com/LiveReload-0.0.4-Setup.exe') Try LiveReload 0.0.4 Pre-Alpha
 
         :markdown
           Warrrrning: this early Windows release is toxic, AND it won't be clear how to use it. [Read some helpful instructions here.](http://help.livereload.com/kb/roadmap/latest-development-builds) Requires XP+.
@@ -126,7 +126,7 @@ html
 
         :markdown
           The full source code of LiveReload 2 is available on GitHub: [LiveReload2](https://github.com/livereload/LiveReload2) (Mac on master branch, Windows on node branch), [livereload-plugins](https://github.com/livereload/livereload-plugins), [livereload-js](https://github.com/livereload/livereload-js), [livereload-extensions](https://github.com/livereload/livereload-extensions).
-          
+
           Why? Because curiosity is the most basic and important quality of good developers. I believe that everyone benefits from being able to study and tinker with other people's software.
 
           There is no formal license attached. You are free to tinker with it and share the results with your friends, but please don't distribute binaries publicly without my permission. I still expect every user to pay for a license, unless you have a good reason not to.
@@ -158,7 +158,7 @@ html
           5. VMs or testing from other PCs? Same as with mobile devices, really; the JavaScript snippet is your friend. (It is displayed in the LiveReload window, btw, so you can't possibly miss it.)
 
           6. How do you stop that snippet from making it into production, then? Well, simple: add an IF and check location.host, and then feel free to commit and deploy.
-          
+
           7. What happens if there's a hideous error in your shiny CoffeeScript or SASS file? LiveReload will display an error notification. It will also detect which editor you are using and display a corresponding “Edit in Submate Wrangler” button.
 
           8. That edit button goes to great lengths to jump to the exact error location. One would expect any text editor since sed to be able to jump to a specific line number from the command line. Alas, guys like Coda and Espresso make it hard (as in, emulate-command-L-typing-a-number-pressing-enter hard), which works just as well as it sounds.
@@ -166,7 +166,7 @@ html
           9. Back to basics. It is important to know that LiveReload only monitors files with specific extensions. A nice fat list is hard-coded, but you can add your own ones in monitoring settings.
 
           1. LiveReload has been tested with [Rails](http://help.livereload.com/kb/frameworks-and-toolchains/rails), [Drupal](http://help.livereload.com/kb/frameworks-and-toolchains/drupal), [WordPress](http://help.livereload.com/kb/frameworks-and-toolchains/wordpress), [Joomla](http://help.livereload.com/kb/frameworks-and-toolchains/joomla) and [ExpessionEngine](http://help.livereload.com/kb/frameworks-and-toolchains/expressionengine), all of which are links to articles with useful framework-specific information.
-          
+
           1. Working with file: protocol? @import quirks? Keyboard shortcuts? Explore our [knowledge base](http://help.livereload.com/kb/) to find out more.
 
           1. If you are ever stuck, there's a nice friendly question mark button in the title bar. Think of it as a modern version of DON'T PANIC.
@@ -242,7 +242,7 @@ html
           LiveReload 2.x is developed by Andrey Tarantsov, all alone and by himself now (although it used to be more of us).
 
           You can read [the history of the first year of LiveReload here](http://tarantsov.com/blog/2011/07/the-story-of-livereload-the-first-anniversary).
-          
+
           Cheers!
 
     script(src='https://livereload.tenderapp.com/tender_widget.js', type='text/javascript')
@@ -264,11 +264,11 @@ html
         window.onload = (typeof window.onload != 'function') ?
            loadChartbeat : function() { oldonload(); loadChartbeat(); };
       })();
-        
+
     script(type='text/javascript')
-     var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E')); 
+     var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E'));
     script(type='text/javascript')
-     try {  var mpmetrics = new MixpanelLib('c172b6e3eb5bf1de17f8d0c590fa561e'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } 
+     try {  var mpmetrics = new MixpanelLib('c172b6e3eb5bf1de17f8d0c590fa561e'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; }
     script
       mpmetrics.set_config({ track_links_timeout: 1000 });
       mpmetrics.track('Load homepage');
@@ -304,4 +304,4 @@ html
       //     $('.greencard-sent').show();
       //   });
       // });
-    
+
