@@ -30,7 +30,16 @@ RewriteRule ^about[/.,;)]*$ http://feedback.livereload.com/knowledgebase/article
 RewriteRule ^moved[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/92771-we-ve-moved-to-a-new-support-site [L,R]
 RewriteRule ^help[/.,;)]*$ http://feedback.livereload.com/ [L,R]
 RewriteRule ^purchase[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/87911-can-i-purchase-a-license-for-my-entire-team-compan [L,R]
-RewriteRule ^kb[/.,;)]*$ http://feedback.livereload.com/ [L,R]
+
+RewriteRule ^using/with/django[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86238-django [L,R]
+RewriteRule ^using/with/drupal[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86236-drupal [L,R]
+RewriteRule ^using/with/ee[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86268-expressionengine [L,R]
+RewriteRule ^using/with/joomla[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86252-joomla [L,R]
+RewriteRule ^using/with/rails[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86278-rails [L,R]
+RewriteRule ^using/with/sprockets[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86164-sprockets [L,R]
+RewriteRule ^using/with/wordpress[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86201-wordpress [L,R]
+
+RewriteRule ^kb[/.,;)]*$ http://feedback.livereload.com/knowledgebase [L,R]
 
 RewriteRule ^kb/general-use/using-livereload-without-browser-extensions$ http://go.livereload.com/integration [L,R]
 RewriteRule ^kb/general-use/working-with-local-files-file-urls$ http://go.livereload.com/integration [L,R]
