@@ -45,16 +45,10 @@ html
         img(src='images/screenshot.png')
       .right
         h2 What does LiveReload do?
-        p
-          | LiveReload monitors changes in the file system.
-          | As soon as you save a file, it is
-          a(href='#compilers') preprocessed as needed
-          | ,
-          | and the browser is refreshed.
-        p
-          | Even cooler, when you change a CSS file or an image,
-          | the browser is updated instantly without reloading
-          | the page.
+        :markdown
+          LiveReload monitors changes in the file system. As soon as you save a file, it is [preprocessed as needed](#compilers), and the browser is refreshed.
+
+          Even cooler, when you change a CSS file or an image, the browser is updated instantly without reloading the page.
     section.download-section
       a(name='download')
       .left
@@ -77,10 +71,10 @@ html
 
         h3
           span Windows?
-          a.download(href='http://download.livereload.com/LiveReload-0.0.4-Setup.exe') Try LiveReload 0.0.4 Pre-Alpha
+          a.download-win(href='http://download.livereload.com/windows/LiveReloadSetup.exe') Try LiveReload 0.8.5.1 Alpha
 
         :markdown
-          Warrrrning: this early Windows release is toxic, AND it won't be clear how to use it. [Read some helpful instructions here.](http://help.livereload.com/kb/roadmap/latest-development-builds) Requires XP+.
+          (Updates automatically. Requires XP+. [Getting Started info here](http://go.livereload.com/win).)
 
         h3 Linux?
 
@@ -96,7 +90,7 @@ html
           p
             label(for='fjkujj-fjkujj') Your e-mail address:
             br
-            input#fjkujj-fjkujj.email(name='cm-fjkujj-fjkujj')
+            input#fjkujj-fjkujj.email(type='text', name='cm-fjkujj-fjkujj')
           p
             label(for='About') Tell us about yourself (optional!)
             br
@@ -271,37 +265,42 @@ html
      try {  var mpmetrics = new MixpanelLib('c172b6e3eb5bf1de17f8d0c590fa561e'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; }
     script
       mpmetrics.set_config({ track_links_timeout: 1000 });
-      mpmetrics.track('Load homepage');
-      mpmetrics.track_links('.download', 'Download');
-      mpmetrics.track_links('.binaryage-link-totalfinder', 'Go to BinaryAge', { link: 'TotalFinder' });
-      mpmetrics.track_links('.binaryage-link-firequery', 'Go to BinaryAge', { link: 'FireQuery' });
-      mpmetrics.track_links('.binaryage-link-other', 'Go to BinaryAge', { link: 'other' });
-      mpmetrics.track_links('.go-kb-general', 'Go to Tender', { link: 'kb-general' });
-      mpmetrics.track_links('.go-kb-popular', 'Go to Tender', { link: 'kb-popular' });
-      mpmetrics.track_links('.go-support-new', 'Go to Tender', { link: 'support-new' });
-      mpmetrics.track_links('.go-support-problems', 'Go to Tender', { link: 'support-problems' });
-      mpmetrics.track_links('.go-support-questions', 'Go to Tender', { link: 'support-questions' });
-      // mpmetrics.track_links('.oldver', 'Visit old site');
-      $('.download').click(function(e) {
-        if (!$('.after-download').is(':visible')) {
-          $('.after-download').slideDown();
-        }
-      });
-      // $('.greencard').submit(function(e) {
-      //   e.preventDefault();
-      //   var email = $('.email', this).val();
-      //   if (email.length == 0 || !email.match(/@/)) {
-      //     alert("Please enter a valid email.");
-      //     $('.email', this).focus();
-      //     return;
-      //   }
-      //
-      //   var message = $('.message', this).val();
-      //   mpmetrics.track('Subscribe');
-      //   $('.submit', this).val('Sending your application...');
-      //   $.post('subscribe.php', { email: email, message: message }, function() {
-      //     $('.greencard').hide();
-      //     $('.greencard-sent').show();
-      //   });
-      // });
 
+      function track_link_as_event(className, name, detail) {
+        $(className).click(function(e) {
+          _gaq.push(['_trackEvent', 'Link', name, detail]);
+        });
+
+        var data = {};
+        if (detail)
+          data.link = detail;
+        mpmetrics.track_links(className, name, data);
+      }
+
+      function track_link_as_pageview(className, name, url) {
+        $(className).click(function(e) {
+          _gaq.push(['_trackPageview', url]);
+        });
+
+        mpmetrics.track_links(className, name);
+      }
+
+      mpmetrics.track('Load homepage');
+
+      track_link_as_pageview('.download-mas', 'Download', '/download/mac-app-store');
+      track_link_as_pageview('.download-win', 'Download for Windows', '/download/windows');
+
+      track_link_as_event('.binaryage-link-totalfinder', 'Go to BinaryAge', 'TotalFinder');
+      track_link_as_event('.binaryage-link-firequery', 'Go to BinaryAge', 'FireQuery');
+      track_link_as_event('.binaryage-link-other', 'Go to BinaryAge', 'other');
+
+    script(type='text/javascript')
+      var uvOptions = {};
+      (function() {
+        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/YXNL6PDw9j18AagcnPT9Q.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+      })();
+
+    script
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
