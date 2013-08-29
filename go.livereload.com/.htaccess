@@ -30,6 +30,10 @@ RewriteRule ^about[/.,;)]*$ http://feedback.livereload.com/knowledgebase/article
 RewriteRule ^moved[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/92771-we-ve-moved-to-a-new-support-site [L,R]
 RewriteRule ^help[/.,;)]*$ http://feedback.livereload.com/ [L,R]
 RewriteRule ^purchase[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/87911-can-i-purchase-a-license-for-my-entire-team-compan [L,R]
+RewriteRule ^licensing/volume[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/87911-can-i-purchase-a-license-for-my-entire-team-compan [L,R]
+
+RewriteRule ^reference/compilers/less[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86170-less [L,R]
+RewriteRule ^reference/preferences/rubies[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/203948 [L,R]
 
 RewriteRule ^using/with/django[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86238-django [L,R]
 RewriteRule ^using/with/drupal[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86236-drupal [L,R]
