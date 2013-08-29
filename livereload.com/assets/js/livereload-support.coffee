@@ -136,13 +136,15 @@ showOther = (option, visible, options={}) ->
   $option = $(option)
   $select = $option.closest('select')
   id = $select.prop('id')
+  name = $select.prop('name')
   otherId = id + '-other'
+  otherName = (name ? name + '_other' : undefined);
   $other = $('#' + otherId)
 
   if $other.length == 0
     placeholder = $option.attr('data-other')
 
-    $other = $('<input />', { id: otherId, type: 'type', class: 'form-control', placeholder })
+    $other = $('<input />', { id: otherId, name: otherName, type: 'type', class: 'form-control', placeholder })
     $select.after($other)
 
   if $other.is(':visible') != visible
@@ -165,7 +167,7 @@ computeDerivedData = ->
   data = {}
   data.isMyApp = c.valEq('#product', 'livereload-app')
   data.isUrgent = c.valEq('#category', 'refund')
-  data.isLowPrio = c.valEq('#category', 'free-license')
+  data.isLowPrio = !data.isMyApp || c.valEq('#category', 'free-license')
   data.isDefaultLowPrio = c.valEq('#category', 'feature-request')
   return data
 
@@ -184,6 +186,7 @@ update = (c) ->
   for weblanguage in weblanguages
     c.showHide "\##{weblanguage}-subgroup", c.valEq('#weblanguage', weblanguage)
 
+  c.showHide '#subject-group', !data.isMyApp or c.valSet('#category')
   c.showHide '#body-group', !data.isMyApp or c.valSet('#category')
   c.switchPlaceholder '#body', [
     ["What would you like me to add to LiveReload?", c.valEq('#category', 'feature-request')]
@@ -227,10 +230,11 @@ serialize = ->
   else
     details.urgency ?= 'week'
 
-  details.fields = fieldNames.join(', ')
-
   return details
 
+
+handleFailedSubmittion = (error) ->
+  alert("Error submitting your ticket, sorry. Please email it to andrey@tarantsov.com instead.\nError: #{error}")
 
 jQuery ($) ->
   $('#ticket-form .hidden').removeClass('hidden')
@@ -239,7 +243,7 @@ jQuery ($) ->
   $('#platform').val(platformName)
 
   # persisted fields
-  for id in ['email', 'product']
+  for id in ['name', 'email', 'product']
     saveToAndRestoreFromLocalStorage(id)
 
   # override from the query string
@@ -255,6 +259,31 @@ jQuery ($) ->
   $('#ticket-form').submit (e) ->
     e.preventDefault()
     data = serialize()
+    host = 'https://livereload.herokuapp.com/'
+    host = 'http://localhost:5000/'  if window.location.hostname == 'livereload.dev'
+    url = host + 'support/submit'
+
+    console.log "Sending to #{url}: #{JSON.stringify(data, null, 2)}"
+    $.ajax(url, {
+      # type: 'POST'
+      contentType: 'application/json'
+      data: data  #JSON.stringify(data, null, 2)
+      dataType: 'jsonp'
+      cache: no
+      timeout: 30000
+
+      success: (response, textStatus, xhr) ->
+        if response.ok
+          alert("Ticket submitted succesfully; a copy has been sent to " + data.email + ".");
+        else
+          handleFailedSubmittion("Failed to send email: " + response.message);
+
+      error: (xhr, textStatus, errorThrown) ->
+        handleFailedSubmittion("#{textStatus} -- #{errorThrown}")
+
+      complete: (xhr, textStatus) ->
+        #
+    })
     console.log('data = ' + JSON.stringify(data, null, 2))
 
   emailCopyNoticeTemplate = $('#email-copy-notice').text()

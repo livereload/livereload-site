@@ -1,0 +1,16 @@
+{
+  "name": "livereload-site",
+  "private": true,
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/livereload/livereload-site.git"
+  },
+  "author": "Andrey Tarantsov <andrey@tarantsov.com>",
+  "dependencies": {
+    "postmark": "0.1.8",
+    "express": "3.3.7",
+    "jade": "~0.35.0",
+    "express-useragent": "0.0.7-1"
+  }
+}

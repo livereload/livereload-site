@@ -22,6 +22,13 @@
       </div>
 
       <form id="ticket-form" class="form-horizontal" role="form">
+        <div id="name-group" class="form-group">
+          <label class="col-sm-2 control-label" for="name">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="John Appleseed">
+          </div>
+        </div>
+
         <div id="email-group" class="form-group">
           <label class="col-sm-2 control-label" for="email">Email</label>
           <div class="col-sm-10">
@@ -82,7 +89,7 @@
               <option value="doc-errata">Documentation errata</option>
               <option value="business">Business</option>
               <option value="offer">Offer of help or services</option>
-              <option value="other" data-other="Subject">Other</option>
+              <option value="other">Other</option>
             </select>
           </div>
         </div>
@@ -100,7 +107,7 @@
               <option value="crash-on-launch">Crashes on launch</option>
               <option value="crash">Crashes (other)</option>
               <option value="nothing-after-launch">Nothing happens after launch (no window displayed)</option>
-              <option value="other" data-other="One-line summary of your problem/question">Other</option>
+              <option value="other">Other</option>
             </select>
           </div>
         </div>
@@ -180,10 +187,17 @@
           </div>
         </div>
 
+        <div id="subject-group" class="form-group">
+          <label class="col-sm-2 control-label" for="subject">Subject</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="One-line summary of your message">
+          </div>
+        </div>
+
         <div id="body-group" class="form-group">
           <label for="body" class="col-sm-2 control-label">Message</label>
           <div class="col-sm-10">
-            <textarea class="form-control" rows="5" id="body" placeholder="How can I help you?"></textarea>
+            <textarea class="form-control" rows="5" id="body" name="body" placeholder="How can I help you?"></textarea>
           </div>
         </div>
 
