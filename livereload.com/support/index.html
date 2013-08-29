@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Submit a LiveReload support ticket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/assets/css/readable-bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>LiveReload Support</h1>
+        <p class="lead">Submit a ticket to solve your problem.</p>
+      </div>
+
+      <form id="ticket-form" class="form-horizontal" role="form">
+        <div id="email-group" class="form-group">
+          <label class="col-sm-2 control-label" for="email">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" placeholder="email@example.com">
+          </div>
+        </div>
+
+        <div id="product-group" class="form-group">
+          <label class="col-sm-2 control-label" for="product">Product</label>
+          <div class="col-sm-5">
+            <select id="product" name="product" class="form-control">
+              <option value="livereload-app">LiveReload app</option>
+              <option value="guard-livereload">guard-livereload</option>
+              <option value="sublime-text-plugin">LiveReload plugin for Sublime Text 2</option>
+              <option value="other" data-other="Other product">Other</option>
+            </select>
+          </div>
+          <label class="col-sm-2 control-label" for="platform">Platform</label>
+          <div class="col-sm-3">
+            <select id="platform" name="platform" class="form-control">
+              <option value="">(choose)</option>
+              <option value="mac">Mac</option>
+              <option value="windows">Windows</option>
+              <option value="linux">Linux</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="guard-notice" class="form-group hidden">
+          <p class="col-sm-offset-2 col-sm-10">
+            <strong>Please note:</strong> I did not make Guard or guard-livereload, I only provide <strong>unofficial</strong> support for it.
+
+            I may or may not be able to help, and your request will have lower priority.
+          </p>
+        </div>
+
+        <div id="sublime-text-notice" class="form-group hidden">
+          <p class="col-sm-offset-2 col-sm-10">
+            <strong>Please note:</strong> I did not make this Sublime Text plugin, I only provide <strong>unofficial</strong> support for it.
+            I may or may not be able to help, and your request will have lower priority.
+          </p>
+        </div>
+
+        <hr>
+
+        <div id="category-group" class="form-group">
+          <label class="col-sm-2 control-label" for="category">Category</label>
+          <div class="col-sm-10">
+            <select id="category" name="category" class="form-control">
+              <option value="">(please choose one)</option>
+              <option value="problem">Bug, problem or question</option>
+              <option value="feature-request">Feature request</option>
+              <option value="refund">Refund</option>
+              <option value="trial">Trial</option>
+              <option value="press">Press/review inquiry</option>
+              <option value="free-license">Please gift me a free license</option>
+              <option value="volume">Volume/team/enterprise licensing</option>
+              <option value="doc-errata">Documentation errata</option>
+              <option value="business">Business</option>
+              <option value="offer">Offer of help or services</option>
+              <option value="other" data-other="Subject">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="problem-group" class="form-group hidden">
+          <label class="col-sm-2 control-label" for="email">Problem</label>
+          <div class="col-sm-10">
+            <select id="problem" name="problem" class="form-control">
+              <option value="">(please choose one)</option>
+              <option value="port-occupied">“Cannot start: port occupied”</option>
+              <option value="cannot-connect">“Cannot connect to LiveReload server”</option>
+              <option value="reloading-fails">Reloading does not work</option>
+              <option value="compilation-fails">Compilation does not work</option>
+              <option value="incorrect-output-path">Incorrect compiler output paths</option>
+              <option value="crash-on-launch">Crashes on launch</option>
+              <option value="crash">Crashes (other)</option>
+              <option value="nothing-after-launch">Nothing happens after launch (no window displayed)</option>
+              <option value="other" data-other="One-line summary of your problem/question">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="web-stack-group" class="form-group hidden">
+          <label class="col-sm-2 control-label" for="weblanguage">Web stack</label>
+          <div class="col-sm-5">
+            <select id="weblanguage" name="weblanguage" class="form-control">
+              <option value="">(choose language)</option>
+              <option value="static">Static design</option>
+              <option value="nodejs">Node.js</option>
+              <option value="php">PHP</option>
+              <option value="ruby">Ruby</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="cs">C#</option>
+              <option value="intercal">INTERCAL</option>
+              <option value="other" data-other="Language &amp; framework">Other</option>
+            </select>
+          </div>
+          <div id="nodejs-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="nodejs-webframework" name="webframework" class="form-control">
+              <option value="">(choose framework)</option>
+              <option value="purenode">Pure Node.js</option>
+              <option value="express">Express</option>
+              <option value="other" data-other="Framework">Other</option>
+            </select>
+          </div>
+          <div id="php-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="php-webframework" name="webframework" class="form-control">
+              <option value="">(choose framework)</option>
+              <option value="wordpress">WordPress</option>
+              <option value="drupal">Drupal</option>
+              <option value="purephp">Pure PHP (no framework)</option>
+              <option value="custom">Custom (micro)framework</option>
+              <option value="other" data-other="Framework">Other</option>
+            </select>
+          </div>
+          <div id="ruby-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="ruby-webframework" name="webframework" class="form-control">
+              <option value="">(choose framework)</option>
+              <option value="rails">Rails</option>
+              <option value="other" data-other="Framework">Other</option>
+            </select>
+          </div>
+          <div id="python-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="python-webframework" name="webframework" class="form-control">
+              <option value="">(choose framework)</option>
+              <option value="django">Django</option>
+              <option value="gae-python">Google App Engine</option>
+              <option value="other" data-other="Framework">Other</option>
+            </select>
+          </div>
+          <div id="java-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="java-webframework" name="webframework" class="form-control">
+              <option value="">(choose framework)</option>
+              <option value="play">Play Framework</option>
+              <option value="gae-java">Google App Engine</option>
+              <option value="other" data-other="Framework">Other</option>
+            </select>
+          </div>
+          <div id="cs-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="cs-webframework" name="webframework" class="form-control">
+              <option value="">(choose framework)</option>
+              <option value="asp">ASP</option>
+              <option value="aspnet">ASP.NET</option>
+              <option value="aspnetmvc">ASP.NET + MVC</option>
+              <option value="other" data-other="Framework">Other</option>
+            </select>
+          </div>
+          <div id="intercal-subgroup" class="weblanguage-subgroup col-sm-5">
+            <select id="intercal-webframework" name="webframework" class="form-control">
+              <option value="intercaloninterstates">INTERCAL on Interstates</option>
+              <option value="other" data-other="Framework">Other</option>
+              <option disabled>(really, INTERCAL?)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="body-group" class="form-group">
+          <label for="body" class="col-sm-2 control-label">Message</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="5" id="body" placeholder="How can I help you?"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div id="urgency-group" class="form-group">
+          <label class="col-sm-2 control-label" for="urgency">Urgency</label>
+          <div class="col-sm-10">
+            <div class="radio">
+              <label><input type="radio" name="urgency" value="week" checked> Please respond within a week</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="urgency" value="urgent"> URGENT EMERGENCY! Please respond within 1-2 days!</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="urgency" value="lowprio"> This can wait, please take your time</label>
+            </div>
+            <!-- <select id="urgency" name="urgency" class="form-control">
+              <option value="week">Please respond within a week</option>
+              <option value="urgent">URGENT EMERGENCY! Please respond within 1-2 days!</option>
+              <option value="lowprio">This can wait, please take your time</option>
+            </select> -->
+            <!-- <span class="help-block"></span> -->
+          </div>
+        </div>
+
+        <div id="sublime-text-notice" class="form-group hidden">
+          <p class="col-sm-offset-2 col-sm-10 help-block">
+            I'm the only guy working on LiveReload, half-time, with a family and two kids. I appreciate your patience if there's a delay responding to support requests.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default btn-success">Submit ticket</button>
+            <small id="email-copy-notice" style="margin-left: 1em">Will send a copy to EMAIL</small>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/deps.js"></script>
+    <script src="/assets/js/livereload-support.js"></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  </body>
+</html>
