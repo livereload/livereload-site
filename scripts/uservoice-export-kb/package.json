@@ -1,0 +1,14 @@
+{
+  "name": "uservoice-export-kb",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "csv": "~0.3.6",
+    "dreamopt": "~0.8.0",
+    "async": "~0.2.9",
+    "to-markdown": "0.0.1",
+    "mkdirp": "~0.3.5",
+    "slug": "~0.3.3",
+    "uslug": "~1.0.3"
+  }
+}
