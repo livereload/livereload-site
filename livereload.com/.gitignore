@@ -1,3 +1,4 @@
-*.html
-css/livereload.css
+/build/
+contents/assets/
 !support/*.html
+/content

@@ -224,7 +224,7 @@ section
   .right
     margin-top 69px
     height 483px
-    background url(../screenshot-compilers.png)
+    background url(/images/screenshot-compilers.png)
 
 .friends-section
   .left
@@ -341,3 +341,39 @@ textarea
 table
   border-collapse: collapse
   border-spacing: 0
+
+.brag-widget-frame, .brag-widget-content, .brag-widget-container-top, .brag-widget-profile-photo-wrapper, .brag-widget-triangle, .brag-widget-speech-bubble, .brag-widget-testimonial-wrapper, .brag-widget-testimonial, .brag-widget-name, .brag-widget-handle, .brag-widget-byline, .brag-widget-brag-link, .brag-widget-powered-by-brag-text
+  background transparent !important
+  border none  !important
+  box-shadow: none !important
+  font: 20px 'Lora', 'Times New Roman', Times, serif !important
+.brag-widget-testimonial::before
+  content: "“"
+.brag-widget-testimonial::after
+  content: "”"
+.brag-widget-name::before
+  content: "— "
+.brag-widget-name, .brag-widget-handle
+  font-size: 14px !important
+.brag-widget-byline, .brag-widget-brag-link, .brag-widget-powered-by-brag-text
+  font-size: 10px !important
+.brag-widget-powered-by-brag-image
+  max-height: 12px
+  vertical-align: middle
+  display none
+
+// from the early access page
+
+span.label, span.spacer, span.multiple span
+  width: 120px
+  float: left
+span.multiple
+  float: left
+span.button
+  padding-left: 120px
+div.clear
+  clear: both
+  padding-top: 5px
+.container
+  margin: 20px auto
+  width: 750px
