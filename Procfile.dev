@@ -1,0 +1,1 @@
+web: ./node_modules/.bin/supervisor -i assets,migrations,views,src,test server.js

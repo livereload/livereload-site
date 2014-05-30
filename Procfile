@@ -1,1 +1,1 @@
-web: node ./api.livereload.com/app.js
+web: node server.js
