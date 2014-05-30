@@ -1,4 +1,4 @@
-var queryRow = (queryValue = require('pine2e').pg).queryRow, queryValue = queryValue.queryValue;
+var { queryRow, queryValue } = require('pine2e').pg;
 
 exports.claimLicense = claimLicense;
 exports.countUnclaimedLicenses = countUnclaimedLicenses;
