@@ -295,6 +295,10 @@
         }
       }
     },
+    "moment": {
+      "version": "2.6.0",
+      "from": "moment@"
+    },
     "pine2e": {
       "version": "0.2.4",
       "from": "pine2e@",
@@ -1036,6 +1040,10 @@
       "version": "0.1.8",
       "from": "postmark@",
       "resolved": "https://registry.npmjs.org/postmark/-/postmark-0.1.8.tgz"
+    },
+    "subst": {
+      "version": "0.1.0",
+      "from": "subst@"
     }
   }
 }
