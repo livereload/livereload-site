@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteRule ^(intro|mac|win|beta|trial)[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/67441-how-do-i-start-using-livereload- [L,R]
+RewriteRule ^(intro|mac|stacksocial|win|beta|trial)[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/67441-how-do-i-start-using-livereload- [L,R]
 RewriteRule ^win/history[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/135353-what-s-new-in-livereload-for-windows [L,R]
 RewriteRule ^features[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86270-what-can-livereload-do- [L,R]
 RewriteRule ^download/latest[/.,;)]*$ http://download.livereload.com/LiveReload-2.3.22.zip [L,R]
