@@ -1,0 +1,8 @@
+Subject: LiveReload beta signup - NAME
+
+Customer: NAME <EMAIL>
+App: LiveReload APP_VERSION (APP_PLATFORM)
+
+About:
+ABOUT
+---

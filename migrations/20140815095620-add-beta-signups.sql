@@ -1,0 +1,13 @@
+CREATE TYPE PLATFORM_TYPE AS ENUM('mac', 'windows');
+
+CREATE TABLE beta_signups (
+    id SERIAL PRIMARY KEY,
+    received_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    name VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    about TEXT NOT NULL,
+
+    app_platform PLATFORM_TYPE NOT NULL,
+    app_version VARCHAR NOT NULL
+);
