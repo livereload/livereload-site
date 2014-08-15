@@ -1,8 +1,8 @@
-Subject: LiveReload license claimed via STORE
+Subject: License claimed via STORE
 
-Customer: NAME <EMAIL>
+NAME <EMAIL>
+LICENSE_CODE
 Store: STORE
-License: LICENSE_CODE
 Transaction: TXN
 
 Unclaimed license codes: UNCLAIMED
