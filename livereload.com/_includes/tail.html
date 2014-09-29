@@ -1,0 +1,61 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="//api.mixpanel.com/site_media/js/api/mixpanel.js"></script>
+<script>try { var mpmetrics = new MixpanelLib('c172b6e3eb5bf1de17f8d0c590fa561e'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; }</script>
+<script>
+  var _sf_async_config={uid:23639,domain:"livereload.com"};
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+       (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+       "js/chartbeat.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+    loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
+<script>
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/YXNL6PDw9j18AagcnPT9Q.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
+
+<script>
+  mpmetrics.set_config({ track_links_timeout: 1000 });
+
+  function trackLinkAsEvent(className, name, detail) {
+    $(className).click(function(e) {
+      _gaq.push(['_trackEvent', 'Link', name, detail]);
+    });
+
+    var data = {};
+    if (detail)
+      data.link = detail;
+    mpmetrics.track_links(className, name, data);
+  }
+
+  function trackLinkAsPageView(className, name, url) {
+    $(className).click(function(e) {
+      _gaq.push(['_trackPageview', url]);
+    });
+
+    mpmetrics.track_links(className, name);
+  }
+
+  mpmetrics.track('Load homepage');
+
+  trackLinkAsPageView('.download-mas', 'Download', '/download/mac-app-store');
+  trackLinkAsPageView('.download-win', 'Download for Windows', '/download/windows');
+
+  trackLinkAsEvent('.binaryage-link-totalfinder', 'Go to BinaryAge', 'TotalFinder');
+  trackLinkAsEvent('.binaryage-link-firequery', 'Go to BinaryAge', 'FireQuery');
+  trackLinkAsEvent('.binaryage-link-other', 'Go to BinaryAge', 'other');
+</script>

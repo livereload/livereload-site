@@ -1,7 +1,0 @@
-{
-  "locals": {
-  },
-  "plugins": [
-    "../node_modules/wintersmith-jade"
-  ]
-}

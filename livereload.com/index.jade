@@ -1,6 +1,6 @@
 ---
 title: LiveReload
-template: home.jade
+layout: home
 ---
 
 header
@@ -53,8 +53,6 @@ header
       p.after-download(style='display: none')
         | Thanks! Please also sign up for our newsletter to receive new build
         | notifications and useful updates.
-
-      // Included plugins:
 
       h3
         span Windows?
@@ -153,7 +151,9 @@ header
 
 
   section.compilers-section
+
     a(name='compilers')
+
     .left
       h2 Compilers
 
@@ -218,57 +218,3 @@ header
         You can read [the history of the first year of LiveReload here](http://tarantsov.com/blog/2011/07/the-story-of-livereload-the-first-anniversary).
 
         Cheers!
-
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js')
-  script(type='text/javascript')
-    var _sf_async_config={uid:23639,domain:"livereload.com"};
-    (function(){
-      function loadChartbeat() {
-        window._sf_endpt=(new Date()).getTime();
-        var e = document.createElement('script');
-        e.setAttribute('language', 'javascript');
-        e.setAttribute('type', 'text/javascript');
-        e.setAttribute('src',
-           (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
-           "js/chartbeat.js");
-        document.body.appendChild(e);
-      }
-      var oldonload = window.onload;
-      window.onload = (typeof window.onload != 'function') ?
-         loadChartbeat : function() { oldonload(); loadChartbeat(); };
-    })();
-
-  script(type='text/javascript')
-   var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E'));
-  script(type='text/javascript')
-   try {  var mpmetrics = new MixpanelLib('c172b6e3eb5bf1de17f8d0c590fa561e'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; }
-  script
-    mpmetrics.set_config({ track_links_timeout: 1000 });
-
-    function track_link_as_event(className, name, detail) {
-      $(className).click(function(e) {
-        _gaq.push(['_trackEvent', 'Link', name, detail]);
-      });
-
-      var data = {};
-      if (detail)
-        data.link = detail;
-      mpmetrics.track_links(className, name, data);
-    }
-
-    function track_link_as_pageview(className, name, url) {
-      $(className).click(function(e) {
-        _gaq.push(['_trackPageview', url]);
-      });
-
-      mpmetrics.track_links(className, name);
-    }
-
-    mpmetrics.track('Load homepage');
-
-    track_link_as_pageview('.download-mas', 'Download', '/download/mac-app-store');
-    track_link_as_pageview('.download-win', 'Download for Windows', '/download/windows');
-
-    track_link_as_event('.binaryage-link-totalfinder', 'Go to BinaryAge', 'TotalFinder');
-    track_link_as_event('.binaryage-link-firequery', 'Go to BinaryAge', 'FireQuery');
-    track_link_as_event('.binaryage-link-other', 'Go to BinaryAge', 'other');

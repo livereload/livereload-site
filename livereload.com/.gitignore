@@ -1,5 +1,1 @@
-/build/
-contents/assets/
-!support/*.html
-/content
-/old
+/_site/
