@@ -1,0 +1,23 @@
+<p>Here's how CSS/JS preprocessors like SASS, LESS, CoffeeScript etc and <a href="http://go.livereload.com/remote">remote server workflows</a> fit together.</p>
+
+<h2>CSS preprocessors</h2>
+
+<p>LiveReload only compiles files locally, so you need to figure a way to upload the resulting compiled files. Some day LiveReload will learn to handle SFTP, but for now, you will either need to tell Coda/Espresso/Transmit to upload the changes, or use something like Sublime SFTP plugins's monitoring function to upload compiled files automatically.</p>
+
+<p>Luckily, you don't need to do this on every CSS change because LiveReload has an ‘override’ function. So your workflow looks like this:</p>
+
+<ol>
+<li>Create SASS/LESS files for the first time, upload compiled CSS.</li>
+<li>Open the page in the browser.</li>
+<li>Change SASS, see the change immediately</li>
+<li>Change SASS, see the change immediately</li>
+<li>etc</li>
+<li>When satisfied, upload the compiled CSS</li>
+</ol>
+
+
+<p>This is moderately painful, but still a vast improvement on anything you could do without LiveReload.</p>
+
+<h2>JS and HTML preprocessors (CoffeeScript, HAML etc)</h2>
+
+<p>When using this, it may be painful: LiveReload only compiles files locally, and it's up to you to figure a way to upload the resulting compiled files. So far, the best tool for the job is Sublime Text 2's <a href="http://wbond.net/sublime_packages/sftp">SFTP plugin</a>, which has a monitoring option.</p>

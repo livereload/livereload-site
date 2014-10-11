@@ -1,0 +1,67 @@
+<p><b>Background:</b> To communicate with your browsers,
+LiveReloads needs its JavaScript code to be injected into your web
+pages. (If you're curious, see more details in <a href="http://feedback.livereload.com/knowledgebase/articles/87992-how-does-livereload-talk-to-my-browsers-">How does LiveReload talk to my
+   browsers?</a>)</p>
+
+<p>There are 3 ways to arrange that:</p>
+
+<ol>
+  <li>Either add a script tag into your HTML code manually,</li>
+
+  <li>or install a browser extension (that, when activated, adds
+  the script tag to the visited pages on the fly),</li>
+
+  <li>or use a plugin for your web framework (that adds the script
+  tag on the fly when serving requests), currently only available
+  for Rails/Rack.</li>
+</ol>
+
+<p>So <b>how do you choose?</b></p>
+
+<p>Use method 1 (insert a tag) or method 3 (framework plugin)
+if:</p>
+
+<ul>
+  <li>you want live reloading for sites open on <b>iPhone, iPod,
+  iPad</b> devices or iOS simulator (and, soon, Android
+  devices/emulators)<br></li>
+
+  <li>you want <span class="c1">live reloading for sites
+  open</span> on other computers on your network without browser
+  extensions installed<br></li>
+
+  <li>you want to work with file: URLs in Safari (because Safari
+  prohibits extensions from accessing file: URLs under any
+  circumstances)</li>
+</ul>
+
+<p>Use method 2 (browser extension) if:</p>
+
+<ul>
+  <li>you want to preview CSS changes against a live site<br></li>
+
+  <li>you want to use the upcoming "saving CSS changes from web
+  inspector" feature</li>
+
+  <li><b>most people prefer this method</b> because it requires no
+  changes to your projects</li>
+</ul>
+
+<p><span class="c2">You can use both if you need to; the script tag
+you add manually will happily cooperate with the browser
+extension.</span></p>
+
+<p><b>Ready to act?</b> See one of these articles for detailed
+instructions:</p>
+
+<p class="c3"> </p>
+
+<ol>
+  <li><span class="c4"><a href="http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-">How do I add the SCRIPT tag manually?</a></span></li>
+
+  <li><span class="c4"><a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">How do I install and use the browser
+  extensions?</a></span></li>
+
+  <li><span class="c4"><a href="http://feedback.livereload.com/knowledgebase/articles/88177-does-my-framework-tool-have-a-livereload-plugin-">Does my framework/tool have a LiveReload
+  plugin?</a></span></li>
+</ol>

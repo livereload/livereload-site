@@ -1,0 +1,37 @@
+<p>Unless you use <a href="http://go.livereload.com/remote" target="_blank">one of the supported remote workflows</a>, LiveReload 2 won't work when your changes never reach the local disk. Examples of unsupported workflows are:</p>
+
+<ul>
+<li>editing with Vim or similar directly on the remote server</li>
+<li>using Coda without a local copy of the sources</li>
+</ul>
+
+
+<p>However, if you have ssh access to your server and you can install Ruby gems on it, you still can get live reloading to work using our browser extensions and a command-line tool called guard-livereload.</p>
+
+<p>Quick instructions:</p>
+
+<ol>
+<li><p>Make sure Ruby 1.8.7+ and a recent version of RubyGems (perhaps 1.8+) is installed on the server.</p></li>
+<li><p>Install guard and guard-livereload: <code>sudo gem install guard guard-livereload</code> (whether you need sudo or not depends on your system configuration)</p></li>
+<li><p>SSH into your server, cd into your project folder and run:</p>
+
+<pre><code>guard init<br></code><code>guard init livereload</code></pre>
+
+<p> This will create a file named “Guardfile” which tells Guard what to do when files are modified. Guard has multiple plugins to handle all kinds of actions; guard-livereload is one of them.</p></li>
+<li><p>Run <code>guard</code> command on the server (remember to do this from your project folder). You should get a line saying that LiveReload is now listening.</p></li>
+<li><p>Make sure LiveReload 2 is <em>not</em> running. You need the corresponding TCP port to be free on the next step.</p></li>
+<li><p>Forward LiveReload's port to your server, so that local browser extensions can connect to guard-livereload running remotely. You need to run ssh with the following arguments:</p>
+
+<pre><code> ssh -L 35729:127.0.0.1:35729 …
+</code></pre>
+
+<p> where … is the usual stuff you type after <code>ssh</code>. You need to keep this command running to be able to use LiveReload.</p>
+
+<p> If things don't work, and/or on the next step ssh says something about not being able to open a channel, please check that your server has SSH port forwarding enabled. Most shared hosts don't, and even if you have your own server it may be disabled by default.</p></li>
+<li><p>Now you can open the remote site in your browser and turn LiveReload on.</p></li>
+</ol>
+
+
+<p>That should work. Please let us know if it does not.</p>
+
+<p>See <a href="http://go.livereload.com/remote" target="_blank">an overview of other remote workflows</a>.</p>

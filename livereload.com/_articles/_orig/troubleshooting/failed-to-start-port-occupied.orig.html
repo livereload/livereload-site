@@ -1,0 +1,38 @@
+<p><img src="http://assets.livereload.com/failed-to-start-port-occupied.png"></p>
+
+<p>LiveReload uses TCP port 35729 to communicate with its browser extensions. This error means that another application on your computer has already taken this port.</p>
+
+<p>Possible causes below.</p>
+
+<h2>Cause 1: You have an alternative server like guard-livereload running</h2>
+
+<p>All of the following tools are not compatible with LiveReload 2:</p>
+
+<ul>
+<li>guard-livereload</li>
+<li>rack-livereload</li>
+<li>livereload plugin for Sublime Text</li>
+</ul>
+
+
+<p>There is no need to completely remove them, just be sure to not run LiveReload 2 and those tools at the same time.</p>
+
+<h2>Cause 2: Another logged in user on your computer is using LiveReload</h2>
+
+<p>If you use fast user switching, please keep in mind that only one user can run LiveReload at the same time.</p>
+
+<h2>Cause 3: Another app is using the port for an unrelated reason</h2>
+
+<p>On a Mac, please run the following command in the Terminal:</p>
+
+<pre><code>lsof -iTCP:35729
+</code></pre>
+
+<p>On Windows, please execute the following command from cmd.exe:</p>
+
+<pre><code>netstat -ab | findstr 35729
+</code></pre>
+
+<p>If it outputs nothing, then the port is unused. Otherwise, it gives you the name of the app which uses the port; if you quit that app, LiveReload should work (and the app will likely use another port the next time you run it).</p>
+
+<p>If that hasn't resolved your problem, please open a new support ticket and we'll help!</p>

@@ -1,0 +1,163 @@
+<p>Changes in 2.3.27:</p>
+
+<ul>
+
+<li>None, just a Mac App Store version number for v2.3.26. Not at all sure that Apple will approve the update, but submitting anyway.</li>
+
+</ul>
+
+<p>Changes in 2.3.26:</p>
+
+<ul>
+
+<li>Added a <a href="http://feedback.livereload.com/knowledgebase/articles/195869-how-to-change-the-port-number-livereload-listens-o">hidden setting</a> to change LiveReload port number.</li>
+<li>Fixed a ‘port occupied’ error message to actually show up.</li>
+
+</ul>
+
+<p>Changes in 2.3.24:</p>
+
+<ul>
+
+<li>Updated CoffeeScript to v1.6 with source maps, enable them in compiler options.</li>
+<li>Updated HAML to v4, which is mostly backwards-compatible, but do check <a href="http://blog.haml.info/post/42998475354/haml-4-0-has-been-released">the official blog post about HAML 4</a>.</li>
+<li>Updated ZURB foundation to v4. Please open a support request if this change is unwelcome. See the <a href="http://foundation.zurb.com/migration.php">migration guide</a>.</li>
+<li>Other compilers and libraries updated to the latest versions.</li>
+
+</ul>
+
+
+<p>Changes in 2.3.22:</p>
+
+<ul>
+
+<li>Fixed a bug with LiveReload hanging on the first compilation error.</li>
+
+</ul>
+
+
+<p>Changes in 2.3.21:</p>
+
+<ul>
+
+<li>Bundled compilers updated: SASS 3.2.5, Compass 0.12.2, LESS 1.3.3, CoffeeScript 1.4.0, IcedCoffeeScript 1.4.0a, Jade 0.28.0, HAML 3.1.7, SLIM 1.3.6.</li>
+<li>Added MaxMonitoredFilesPerProject option to change the default limit of 100,000 files per project for those of you with really huge projects. Documented in “<a href="http://feedback.livereload.com/knowledgebase/articles/154257-monitoring-more-than-100-000-files">Monitoring more than 100,000 files</a>” help article.</li>
+
+</ul>
+
+
+<p>Changes in 2.3.20:</p>
+
+<ul>
+
+<li>fixed handling of custom CoffeeScript output file names</li>
+<li>signed with Developer ID</li>
+
+</ul>
+
+
+<p>Changes in 2.3.18:</p>
+
+<ul>
+
+<li>fixed a crash due to a buffer overflow bug in RPC code</li>
+
+</ul>
+
+
+<p>Changes in 2.3.16:</p>
+
+<ul>
+
+<li>fixed Susy</li>
+<li>kill dates are gone, all builds will now work forever</li>
+<li>off-Mac App Store licensing support</li>
+<li>added unlimited trial mode</li>
+<li>added Sparkle autoupdater</li>
+<li>adjusted grace period on web socket disconnection — LiveReload now waits longer before stopping FS monitoring</li>
+
+</ul>
+
+
+<p>Changes in 2.3.15:</p>
+
+<ul>
+
+<li>added ZURB Foundation 3</li>
+<li>all compilers updated to the latest versions</li>
+
+</ul>
+
+
+<p>Changes in 2.3.14:</p>
+
+<ul>
+
+<li>fix a URL overriding bug that caused stylesheets to disappear (because of&nbsp;spurious 403 errors)</li>
+
+</ul>
+
+
+<p>Changes in 2.3.12:</p>
+
+<ul>
+<li>fix a bug in <code>url(…)</code> CSS rewriting logic done when URL overriding is active</li>
+<li>fix a crash when Internet connection is not available</li>
+</ul>
+
+
+<p>Changes in 2.3.10/2.3.11:</p>
+
+<ul>
+<li>support for ‘chained’ imports in Sass: <code>@import "foo", "bar", "boz"</code></li>
+<li>all compilers updated to the latest stable versions (to the latest prerelease versions for 2.3.11)</li>
+<li>fixed a crash the occurred if the system-installed Ruby did not work</li>
+</ul>
+
+
+<p>Changes in 2.3.9:</p>
+
+<ul>
+<li>support for prefixfree <em>actually</em> works</li>
+</ul>
+
+
+<p>Changes in 2.3.8:</p>
+
+<ul>
+<li>CoffeeScript, IcedCoffeeScript, Stylus and HAML updated to the latest versions</li>
+</ul>
+
+
+<p>Changes in 2.3.7:</p>
+
+<ul>
+<li>better handling of FS changes that occur during post-processing</li>
+<li>stops output path autodetection madness (the rules are now much stricter)</li>
+<li>correct handling of imported files with identical names located in different folders</li>
+<li>some other bug fixes</li>
+</ul>
+
+
+<p>Changes in 2.3.5/2.3.6:</p>
+
+<ul>
+<li>updated all bundled compiles to the latest versions</li>
+<li>fix a crash when modifying a compilable file with compilation mode off</li>
+</ul>
+
+
+<p>Changes in 2.3.4:</p>
+
+<ul>
+<li>ability to customize project name in the project list (try right-clicking and double-clicking)</li>
+<li>ability to customize output file names (your feedback is required on the UI — I'm not 100% happy with it)</li>
+<li>fixed output path autodetection heuristics when imported files are present (LiveReload was always meant to read your mind when setting up output paths)</li>
+<li>fixed a bug which caused SASS imported files to sometimes not getting recognized as such</li>
+</ul>
+
+
+<p>Changes in 2.3.0–2.3.3:</p>
+
+<ul>
+<li>Stylus compiler now supports Nib</li><li>works with Chrome 19 and the latest beta of Safari, should resolve other intermittent connection problems</li><li>web socket communication is now done via Node.js and websocket.io</li></ul>

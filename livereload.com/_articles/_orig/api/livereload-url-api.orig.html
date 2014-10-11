@@ -1,0 +1,21 @@
+<p>LiveReload can be controlled using <code>livereload:command?params</code> URLs. This can be used by scripts to programmatically change LiveReload folder settings.</p>
+
+<h2>Adding or updating projects</h2>
+
+<p>Syntax: <code>livereload:add?path=/some/folder&amp;compiler-sass-mode=compile</code></p>
+
+<p>Path is a URL-encoded path to the folder in question. (You can skip URL encoding as long as the path does not contain ampersands, percent signs or plus characters.)</p>
+
+<p>For example, to add <code>~/Desktop/Foo</code>, run:<br></p>
+
+<pre><code>open "livereload:add?path=~/Desktop/Foo"
+</code></pre>
+
+<p><span class="Apple-style-span" style="color: rgb(46, 47, 51); font-size: 22px; font-weight: bold; line-height: 22px; ">Removing projects</span><br></p>
+
+<p>Syntax: <code>livereload:remove?path=/some/folder</code></p>
+
+<p>For example:</p>
+
+<pre><code>open "livereload:remove?path=~/Desktop/Foo"
+</code></pre>

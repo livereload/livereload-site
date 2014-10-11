@@ -1,0 +1,37 @@
+<p>(Also see our <a href="http://go.livereload.com/csspreproc" target="_blank">article on choosing a CSS preprocessor language</a> if you're not sure which one is for you.)</p>
+
+<p>Both SASS and Compass are fully supported.</p>
+
+<h2>Partials</h2>
+
+<p>The underscore naming convention for partials is supported too. The only issue is that files that start with an underscore but aren't included anywhere will still be compiled (i.e. you have to actually include a partial somewhere for it to be considered a partial).</p>
+
+<p>If you have multiple partials with the same file name (e.g. foo/<em>all.scss and bar/</em>all.scss), LiveReload might be confusing them when calculating import graphs. If LiveReload mistakenly tried to compile your partials and you have multiple partials with equal file names, please consider renaming them.</p>
+
+<h2>Using Compass</h2>
+
+<p>IMPORTANT: Be sure that the folder added to LiveReload is Compass's root folder.</p>
+
+<p>If you are running a version of LiveReload earlier than 2.0 β2, please upgrade, since Compass support has been greatly improved since then.</p>
+
+<p>If you use Compass plugins, make sure the version of Ruby selected in compilation options is the one that you have installed the plugins into. (If your version of Ruby is not listed there, please pick the system Ruby and install the required plugins there.)</p>
+
+<p>If you get the following error:</p>
+
+<pre><code>Nothing to compile. If you're trying to start a new project, you have
+left off the directory argument. Run "compass -h" to get help
+</code></pre>
+
+<p>it means that you've added a wrong folder. You need to add the root compass folder, not a subfolder or a parent folder.</p>
+
+<h2>Compass vs. SASS project detection</h2>
+
+<p>LiveReload detects a project as a Compass one if one of the following conditions hold true:</p>
+
+<ul>
+<li>there is a file <code>config/compass.rb</code>, <code>.compass/config.rb</code>, <code>config/compass.config</code>, <code>src/config.rb</code> or <code>config.rb</code> somewhere in your project which contains a literal string <code>compass plugins</code> or <code>preferred_syntax = :</code> inside</li>
+<li>there is an SCSS/SASS file that imports <code>compass*</code> or <code>*ZURB-foundation*</code></li>
+</ul>
+
+
+<p>If that does not work for your project, please contact us and we'll fix it.</p>

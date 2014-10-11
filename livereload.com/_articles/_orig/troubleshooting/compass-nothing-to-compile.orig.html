@@ -1,0 +1,22 @@
+<p>First: this message means LiveReload is compiling your SASS code via Compass. If this is what you intended, marvelous. If you were trying to use pure SASS without Compass and get this message, something is seriously screwed up — please <a href="http://help.livereload.com/discussion/new">contact us</a> for more help.</p>
+
+<h2>Did you create a Compass project?</h2>
+
+<p>In case you are new to Compass, you cannot simply add</p>
+
+<pre><code>@import 'compass/something'
+</code></pre>
+
+<p>into your SASS file and expect it to work; Compass requires a certain project structure and config files.</p>
+
+<p>Generally, you want to run <code>compass create .</code> in your directory to create a new project. However there are several options along the way, so we encourage you to <a href="http://compass-style.org/help/tutorials/command-line/">read the official tutorial about that</a>.</p>
+
+<p>Please restart LiveReload to pick up a change in the type of your project. I will fix the need to restart after releasing 2.0.</p>
+
+<h2>So, you have a Compass project, but compilation not work?</h2>
+
+<p>LiveReload Compass support requires you to add your <strong>root Compass directory</strong> to LiveReload. To put it another way, it must be possible to run 'compass' without arguments in the directory you add to LiveReload.</p>
+
+<p>Normally, this is not an issue, but if you have been previously using <a href="http://compass.handlino.com/">Compass app</a>, you may have your Compass project in a compass/ subdirectory. In this case, you need to add compass/ subdirectory to LiveReload.</p>
+
+<p>If this explanation does not resolve your problem, please <a href="http://help.livereload.com/discussion/new">create a new discussion</a> and let us know!</p>

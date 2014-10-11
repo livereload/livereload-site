@@ -1,0 +1,7 @@
+<p>A friendly UI for choosing versions of your SASS, LESS etc preprocessors is coming. Meanwhile, here are your options of using a version different from the one shipped with LiveReload:</p>
+
+<p><b>Option 1.</b> Try <a href="http://go.livereload.com/beta">the latest beta version</a> — it usually contains the latest released (aka stable) versions of all preprocessors.</p>
+
+<p><b>Option 2.</b> Inside LiveReload.app bundle, delete all gems under e.g. <code>Resources/SASS.lrplugin/lib/</code>; deleting bundled gems will force LiveReload to use the gems from your system. (If you are using RVM, be sure that the correct version of Ruby is specified in Compilation Settings.)</p>
+
+<p><b>Option 3.</b> Instead of deleting the gems, you can update them to the latest versions. Optionally, before customizing it, you may copy SASS.lrplugin into <code>~/Library/LiveReload/Plugins</code> so that your custom version will survive LiveReload updates.</p>

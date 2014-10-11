@@ -1,0 +1,12 @@
+<p>Please configure LiveReload 2 as follows:</p>
+
+<ol>
+<li><p>To have LiveReload wait for the upload to finish before reloading the page, enable “Wait X seconds before doing a full page reload”, with X slightly more than your usual upload time (I use 1.5 seconds).</p></li>
+<li><p>Waiting sucks when you are editing CSS, though. This is where “Override URLs to serve modified CSS from localhost” comes into play. LiveReload will do some magic to show you the changes instantly on save.</p></li>
+<li><p>If the magic runs dry, i.e. this experimental new “CSS override” mode does not work for you, be sure to open a support ticket. But then you can disable both of the above options, and enable the catch-all “Wait X seconds before processing any changes”. It will of course mean that you'll have to wait for every CSS change to upload before you can see it.</p></li>
+</ol>
+
+
+<p>If you also want to use SASS/LESS/CoffeeScript/etc, please see “<a href="http://feedback.livereload.com/knowledgebase/articles/86283-using-css-js-preprocessors-with-remote-workflows" target="_blank">Using CSS/JS preprocessors with remote workflow</a>”.</p>
+
+<p><a href="http://go.livereload.com/remote" target="_blank">An overview of other remote workflows</a></p>

@@ -1,0 +1,60 @@
+<h2>Installing extensions</h2>
+
+<p>Download and open to install:</p>
+
+<ul>
+<li><a href="http://download.livereload.com/2.0.9/LiveReload-2.0.9.safariextz" target="_blank">Safari extension 2.0.9</a> — note: due to Safari API limitations, browser extension <strong>does not work with file: URLs</strong>; if you're working with local files via file: URL, please use Chrome or insert the snippet</li>
+<li><a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" target="_blank">Chrome extension on the Chrome Web Store</a> — <strong>if you want to use it with local files,</strong> be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation.</li>
+<li><a href="http://download.livereload.com/2.0.8/LiveReload-2.0.8.xpi" target="_blank">Firefox extension 2.0.8</a></li>
+</ul>
+
+
+<p>Extensions 2.x will be updated automatically.</p>
+
+<h2>Using extensions</h2>
+
+<ol>
+<li>Make sure LiveReload 2 is running</li>
+<li>Click the LiveReload toolbar button to enable or disable LiveReload.</li>
+</ol>
+
+
+<p>LiveReload toolbar button is located in the main toolbar in Chrome and Safari, and in the Add-on Toolbar in Firefox (at the bottom).</p>
+
+<p>The icon indicates LiveReload status of the current tab (unavailable / disabled / enabled, connecting / enabled, connected).</p>
+
+<p>If your page already includes LiveReload via a SCRIPT tag, it is considered to be in 'enabled' state initially. You can still disable or reenable it using the toolbar button.</p>
+
+<h2>What's new</h2>
+
+<p>2.0.9: Updated toolbar icons to the ones contributed by Vadim Makeev (pepelsbey). Thanks! Chrome extension published on the Chrome Web Store.</p>
+
+<p>2.0.5: Enabled autoupdating. Updated bundled livereload.js (for use with old-style clients like guard-livereload and livereload 1.x).</p>
+
+<p>2.0.3: Firefox-only update that fixes handling of frames (see <a href="http://help.livereload.com/discussions/problems/97-cannot-find-tab-for-document-error-in-firefox" target="_blank">“Cannot find tab for document” support topic</a>).</p>
+
+<p>2.0.2:</p>
+
+<ul>
+<li>fixed disconnection on each full page reload (yep very lame);</li>
+<li>update livereload.js so that extension, snippet and livereload.js version numbers are now reported to the LR server</li>
+</ul>
+
+
+<p>2.0.1: fixed support of protocol v6 (i.e. older LR-compatible Ruby gems and older builds of LR2)</p>
+
+<p>2.0.0 (alpha quality!):</p>
+
+<ul>
+<li>all extensions have been rewritten from scratch</li>
+<li>extensions no longer handle web socket communication —&nbsp;they simply insert a SCRIPT tag into the page, which loads livereload.js, the same one you'd include if you <a href="http://help.livereload.com/kb/general-use/using-livereload-without-browser-extensions" target="_blank">weren't using extensions at all</a></li>
+<li>all extensions have a toolbar button now (previously Safari was using a context menu item) and use the same icons</li>
+<li>the <a href="http://help.livereload.com/kb/ecosystem/livereload-protocol" target="_blank">new live reload protocol</a> is now supported</li>
+<li>the old protocol is supported too, for compatibility with livereload and guard-livereload gems</li>
+<li>servers that implement the new protocol can provide their own livereload.js, thus eliminating the need to update extensions often (and avoiding client/server version mismatches); older servers are served with a bundled version of livereload.js</li>
+</ul>
+
+
+<h2>Open-source</h2>
+
+<p><a href="http://help.livereload.com/kb/ecosystem/open-source" target="_blank">LiveReload browser extensions are open-sourced</a>.</p>

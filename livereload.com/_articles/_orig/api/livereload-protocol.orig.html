@@ -1,0 +1,92 @@
+<p>This protocol describes the communication between a LiveReload server (LiveReload 2, rack-livereload, guard-livereload etc) and the client (<a href="https://github.com/livereload/livereload-js">livereload.js</a> script, livereload browser extensions or whoever else may choose to connect).</p>
+
+<h2>Status</h2>
+
+<p>This protocol is in use by production versions of LiveReload 2, <a href="http://go.livereload.com/extensions">LiveReload browser extensions 2.x</a>&nbsp;and rack-livereload.</p>
+
+<p>The older protocol v6 is deprecated, and its support will be removed as soon as critical players (guard-livereload) upgrade to v7.</p>
+
+<h2>Basics</h2>
+
+<ul>
+<li>LiveReload server MUST speak web sockets and HTTP on the same port. The port number SHOULD be 35729. Web socket connections MUST use <code>/livereload</code> as the path to connect to (e.g. <code>ws://localhost:35729/livereload</code>).</li>
+</ul>
+
+
+<h2>HTTP protocol</h2>
+
+<ul>
+<li>LiveReload server MUST serve livereload.js (or another similar script implementing the client side of this protocol and compatible with URI options that livereload.js accepts) on HTTP path /livereload.js of the web sockets port.</li>
+</ul>
+
+
+<h2>Web Socket Protocol</h2>
+
+<ul>
+<li><p>Every web socket message MUST be a JSON object with a <code>command</code> key (a string).</p></li>
+<li><p>Upon connection, a handshake takes place:</p>
+
+<ul>
+<li>Each party MUST send a 'hello' message immediately upon connection, and MUST NOT send any other messages before receiving a 'hello' message from the other party.</li>
+<li>The 'hello' message MUST specify a list of protocol URLs that the party wants to speak.</li>
+<li>Each protocol URL MUST be globally unique, and MUST point to an HTML or text document either describing the protocol itself or referencing the related product.</li>
+<li>After sending and receiving a 'hello' message, the parties implicitly agree to speak the intersection of the protocols they mentioned, picking the latest versions supported by both parties.</li>
+<li>If the intersection of the protocols is unsuitable to a party, it MUST close the web socket connection.</li>
+</ul>
+</li>
+<li><p>Each command MUST be defined by one of the negotiated protocols. Each JSON object MUST conform to all negotiated protocols; in particular, this means it MUST only contain keys defined by some of the negotiated protocols, and MUST NOT use any other keys. (A particular vendor can always define its own freeform protocol if it wants to use random unspecified keys. Point is that unless such a protocol is negotiated, no additional keys are permitted.)</p></li>
+<li><p>Handshake, client-to-server.</p>
+
+<pre><code>  {
+      command: 'hello',
+      protocols: [
+          'http://livereload.com/protocols/official-7',
+          'http://livereload.com/protocols/official-8',
+          'http://livereload.com/protocols/2.x-origin-version-negotiation'],
+  }
+</code></pre></li>
+<li><p>Handshake, server-to-client:</p>
+
+<pre><code>  {
+      command: 'hello',
+      protocols: [
+          'http://livereload.com/protocols/official-7',
+          'http://livereload.com/protocols/official-8',
+          'http://livereload.com/protocols/official-9',
+          'http://livereload.com/protocols/2.x-origin-version-negotiation',
+          'http://livereload.com/protocols/2.x-remote-control'],
+      serverName: 'LiveReload 2',  // or e.g. "guard-livereload"; string suitable for "Connected to %s" message
+  }
+</code></pre></li>
+<li><p>HELLO message may contain additional fields according to one of the protocols described in it. Thus any unknown fields MUST be ignored. This is an exception to the general rule, and should be used sparingly.</p></li>
+</ul>
+
+
+<h2>Official Protocol Version 7</h2>
+
+<p>Here's a proposal of a protocol called <code>http://livereload.com/protocols/official-7</code> (previous protocols were called <code>1.1</code>–<code>1.6</code> after LR versions, so we're starting with 7 to avoid confusion).</p>
+
+<ul>
+<li><p>URL update, client-to-server:</p>
+
+<pre><code>  {
+      command: 'url',
+      url: 'http://example.com/some/page'
+  }
+</code></pre></li>
+<li><p>Reload request, server-to-client:</p>
+
+<pre><code>  {
+      command: 'reload',
+      path: 'path/to/file.ext',   // as full as possible/known, absolute path preferred, file name only is OK
+      liveCSS: true               // false to disable live CSS refresh
+  }
+</code></pre></li>
+<li><p>Alert request, server-to-client, can be used by console servers to announce important things (like 'Upgrade your browser extension!') to the user.</p>
+
+<pre><code>  {
+      command: 'alert',
+      message: 'HEY!'
+  }
+</code></pre></li>
+</ul>

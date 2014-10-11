@@ -1,0 +1,37 @@
+<p>LiveReload plugin API is documented in <a href="https://github.com/livereload/livereload-plugins" target="_blank">livereload/livereload-plugins</a> on GitHub.</p>
+
+<h2>An example</h2>
+
+<p>Let's make a simple Node.js-based compiler for a fictional language “More Is Less”, which compiles .more files into .css files.</p>
+
+<p>Put MoreIsLess.lrplugin with the two files listed below into <code>~/Library/LiveReload/Plugins</code> and restart LiveReload. It should now list MoreIsLess among the available compilers and, if you turn compilation on, will invoke our script to turn .more files into .css files.</p>
+
+<p>MoreIsLess.lrplugin/manifest.json:</p>
+
+<pre><code>{
+  "LRCompilers": [
+    {
+      "Name": "MoreIsLess",
+      "Extensions": ["more"],
+      "DestinationExtension": "css",
+      "CommandLine": [
+        "$(node)",
+        "$(plugin)/more.js",
+        "$(additional)",
+        "$(src_path)",
+        "$(dst_path)"
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<p>MoreIsLess.lrplugin/more.js:</p>
+
+<pre><code>var fs = require('fs');
+var sourceFile = process.argv[2];
+var outputFile = process.argv[3];
+var source = fs.readFileSync(sourceFile, 'utf8');
+source = source.replace(/more/g, 'less');
+fs.writeFileSync(outputFile, source);
+</code></pre>

@@ -1,0 +1,15 @@
+<p>LiveReload has some hidden preferences you can configure with <code>defaults write</code> command in Terminal.</p>
+
+<p><strong>You MUST restart LiveReload for hidden preference changes to take effect.</strong></p>
+
+<h2>Emacs temp files</h2>
+
+<p>Normally LiveReload ignores files starting with <code>#</code> or ending with <code>~</code>. You can disable this, so that LiveReload will monitor these files like any other ones, by running:</p>
+
+<pre><code>defaults write com.livereload.LiveReload DontIgnoreEmacsTempFiles -bool YES
+</code></pre>
+
+<p>Revert to default:</p>
+
+<pre><code>defaults delete com.livereload.LiveReload DontIgnoreEmacsTempFiles
+</code></pre>

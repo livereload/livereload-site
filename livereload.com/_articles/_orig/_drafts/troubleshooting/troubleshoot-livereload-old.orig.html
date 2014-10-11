@@ -1,0 +1,53 @@
+<p>So you have followed installation instructions, but LiveReload does not do anything when you change a file? Please check what LiveReload main window says at the bottom.</p>
+
+<ul>
+<li><p>If it says “Safari: right-click…, Chome: click…”, your browser is NOT connected to LiveReload app, and you need to troubleshoot connection problems (see below).</p></li>
+<li><p>If it says “0 changes detected”, your browser IS connected, however LiveReload is not detecting any changes. You need to troubleshoot filesystem monitoring problems (see below).</p></li>
+<li><p>If it says “N changes detected” (N &gt; 0), your browser IS connected and LiveReload is processing changes. You need to troubleshoot reloading problems (see below).</p></li>
+</ul>
+
+
+<h2>Troubleshooting Connection Problems</h2>
+
+<p>Please check the following:</p>
+
+<ol>
+<li><p>Have you either added a SCRIPT snippet to your code, or installed LiveReload browser extensions? Either of those is required to communicate with the browser.</p></li>
+<li><p>If you are using browser extensions, have you enabled them? In Safari, you need to right-click on the page and choose “Enable LiveReload”. In Chrome and Firefox, you need to click the toolbar button.</p></li>
+<li><p>Does your system or browser have proxies configured? If so, it might be trying to make a web socket connection over a proxy server, and thus not reaching LiveReload. Try disabling the proxies, or adding localhost to the list of local hosts.</p></li>
+<li><p>Are your browser, web server and LiveReload app all running on the same computer? Web server and LiveReload app have to be on the same computer. You may use web browser on other devices if you add a SCRIPT snippet to your HTML code.</p></li>
+</ol>
+
+
+<p>If nothing helps, please contact support.</p>
+
+<h2>Troubleshooting File System Monitoring Problems</h2>
+
+<p>There are two reasons why LR might not detect changes:</p>
+
+<ol>
+<li><p>Are there any symlinks involved? File system change notifications do not cross symlink boundaries, so you need to be monitoring exactly the folder that you will be changing files in, or any of its real parent folders. If you are monitoring <code>/foo/bar</code>, and you change a file in <code>/foo/bar/boz/filez/</code>, and <code>/foo/bar/boz</code> is a symlink, the change will not be detected.</p></li>
+<li><p>A (relatively rare) OS bug, present in both 10.6 and 10.7, which causes FSEvents to stop reporting changes for some specific folders. LiveReload detects this bug and warns the user. See <a href="http://help.livereload.com/kb/troubleshooting/os-x-fsevents-bug-may-prevent-monitoring-of-certain-folders" target="_blank">more details in another article</a>.</p></li>
+</ol>
+
+
+<h2>Troubleshooting Reloading Problems</h2>
+
+<p>If browser successfully connects to LiveReload, and the app is detecting changes, but:</p>
+
+<ul>
+<li>nothing happens in your browser, or</li>
+<li>your browser correctly reloads when you change html/php/etc, but does nothing when you change CSS,</li>
+</ul>
+
+
+<p>please check the following:</p>
+
+<ol>
+<li><p>Is your page using file: or https: URLs? Those are not currently supported. They will be supported in the next version. If you were trying to use file:, please see <a href="http://help.livereload.com/kb/general-use/working-with-local-files-file-urls" target="_blank">workarounds for working with local files</a>.</p></li>
+<li><p>If nothing happens when you change CSS, are you using @import? @import is not presently supported, but will be supported in one of the next versions. Sorry. If you're using Drupal 7, there's <a href="http://drupal.org/project/livereload" target="_blank">LiveReload module</a> which makes Drupal use multiple LINK tags instead of @import's.</p></li>
+<li><p>If nothing happens when you change LESS/SASS/CoffeeScript/etc, please check if you have configured compiler modes correctly. If you are using “on-the-fly” mode, please try “ignore” mode instead.</p></li>
+</ol>
+
+
+<p>Otherwise, please contact support and describe your web project in detail (technology / server stack, the way you include stylesheets, anything unusual).</p>
