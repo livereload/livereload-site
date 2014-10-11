@@ -15,3 +15,15 @@ encoding: utf-8
 
 # Build settings
 markdown: kramdown
+
+collections:
+  articles:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: article

@@ -1,0 +1,16 @@
+
+{% for category in site.article_categories %}
+
+<div class="group">
+    <h3>{{ category.title }}</h3>
+
+    <ul>
+        {% for article in category.articles %}
+        <li>
+            <a href="{{ article.url }}">{{ article.title | escape }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endfor %}

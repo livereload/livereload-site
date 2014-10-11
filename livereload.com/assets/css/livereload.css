@@ -416,3 +416,13 @@ div.clear {
   margin: 20px auto;
   width: 750px;
 }
+footer {
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+}
+footer .group {
+  border-top: 1px solid #000;
+}
