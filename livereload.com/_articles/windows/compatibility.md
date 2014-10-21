@@ -10,7 +10,7 @@ Depends on your operating system. Compatible ones are:
 *   Windows Vista
 *   Windows XP with Service Pack 3
 
-<span class="Apple-style-span" style="line-height: 19px;">Not compatible:</span>
+Not compatible:
 
 *   Windows XP SP2, SP1 or without a service pack
 *   Windows 2000

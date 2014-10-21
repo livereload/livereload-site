@@ -1,15 +1,15 @@
 ---
-title: What's new in LiveReload?
+title: What's new in LiveReload for Mac?
 locations:
   - http://feedback.livereload.com/knowledgebase/articles/85008
 ---
 
 Changes in 2.3.27:
 
-*   None, just a Mac App Store version number for v2.3.26\. Not at all sure that Apple will approve the update, but submitting anyway.
+*   None, just a Mac App Store version number for v2.3.26. Not at all sure that Apple will approve the update, but submitting anyway.
 
-Changes in 2.3.26:
-
+Changes in 2.3.26:≥дщзздж0юлдьбльболдхд\э
+llk.upp0--po-09i9mkliiom,kiiol;
 *   Added a [hidden setting](http://feedback.livereload.com/knowledgebase/articles/195869-how-to-change-the-port-number-livereload-listens-o) to change LiveReload port number.
 *   Fixed a ‘port occupied’ error message to actually show up.
 

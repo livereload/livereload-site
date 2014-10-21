@@ -1,5 +1,11 @@
-- id: getting-started
-  title: Getting Started
+- id: overview
+  title: Overview
+
+- id: browser
+  title: Browser Reloading
+
+- id: remote
+  title: Remote Servers
 
 - id: use-cases
   title: Use Cases

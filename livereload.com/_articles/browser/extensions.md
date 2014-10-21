@@ -1,5 +1,6 @@
 ---
 title: How do I install and use the browser extensions?
+order: 10
 locations:
   - http://feedback.livereload.com/knowledgebase/articles/86242
 ---
@@ -8,9 +9,11 @@ locations:
 
 Download and open to install:
 
-*   [Safari extension 2.0.9](http://download.livereload.com/2.0.9/LiveReload-2.0.9.safariextz) — note: due to Safari API limitations, browser extension **does not work with file: URLs**; if you're working with local files via file: URL, please use Chrome or insert the snippet
-*   [Chrome extension on the Chrome Web Store](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) — **if you want to use it with local files,** be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation.
-*   [Firefox extension 2.0.8](http://download.livereload.com/2.0.8/LiveReload-2.0.8.xpi)
+* [Safari extension 2.0.9](http://download.livereload.com/2.0.9/LiveReload-2.0.9.safariextz) — note: due to Safari API limitations, browser extension **does not work with file: URLs**; if you're working with local files via file: URL, please use Chrome or insert the snippet
+
+* [Chrome extension on the Chrome Web Store](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) — **if you want to use it with local files,** be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation.
+
+* [Firefox extension 2.0.8](http://download.livereload.com/2.0.8/LiveReload-2.0.8.xpi)
 
 Extensions 2.x will be updated automatically.
 
@@ -31,12 +34,12 @@ If your page already includes LiveReload via a SCRIPT tag, it is considered to b
 
 2.0.5: Enabled autoupdating. Updated bundled livereload.js (for use with old-style clients like guard-livereload and livereload 1.x).
 
-2.0.3: Firefox-only update that fixes handling of frames (see [“Cannot find tab for document” support topic](http://help.livereload.com/discussions/problems/97-cannot-find-tab-for-document-error-in-firefox)).
+2.0.3: Firefox-only update that fixes handling of frames
 
 2.0.2:
 
-*   fixed disconnection on each full page reload (yep very lame);
-*   update livereload.js so that extension, snippet and livereload.js version numbers are now reported to the LR server
+* fixed disconnection on each full page reload (yep very lame);
+* update livereload.js so that extension, snippet and livereload.js version numbers are now reported to the LR server
 
 2.0.1: fixed support of protocol v6 (i.e. older LR-compatible Ruby gems and older builds of LR2)
 
@@ -51,4 +54,4 @@ If your page already includes LiveReload via a SCRIPT tag, it is considered to b
 
 ## Open-source
 
-[LiveReload browser extensions are open-sourced](http://help.livereload.com/kb/ecosystem/open-source).
+{% ref about/open-source: LiveReload browser extensions are open-sourced %}

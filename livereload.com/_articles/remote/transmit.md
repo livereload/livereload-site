@@ -8,9 +8,9 @@ This is an experimental mode, so let me know if it works for you:
 
 1.  Please add the following folder to LiveReload:
 
- ~/Library/Caches/Cleanup At Startup/Transmit
+    ~/Library/Caches/Cleanup At Startup/Transmit
 
- (protip: after opening a file via Transmit, Command-click the file name in the title bar of your editor to quickly get to that folder)
+(protip: after opening a file via Transmit, Command-click the file name in the title bar of your editor to quickly get to that folder)
 
 2.  To have LiveReload wait for the upload to finish before reloading the page, enable “Wait X seconds before doing a full page reload”, with X slightly more than your usual upload time (I use 1.5 seconds).
 
