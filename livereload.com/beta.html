@@ -1,0 +1,34 @@
+---
+title: Beta Versions of LiveReload
+layout: page
+permalink: /beta/
+---
+
+{% if site.data.version_mac_beta.version == site.data.version_mac_production.version %}
+
+<p>
+    There is no beta version at the moment.
+    Please download <strong>stable v{{ site.data.version_mac_production.version }}:</strong>
+    <a href="{{ site.data.version_mac_production.url }}">LiveReload-{{ site.data.version_mac_production.version }}.zip</a>
+</p>
+
+{% else %}
+
+<p>
+    <strong>Beta v{{ site.data.version_mac_beta.version }}:</strong>
+    <a href="{{ site.data.version_mac_beta.url }}">LiveReload-{{ site.data.version_mac_beta.version }}.zip</a>
+</p>
+
+<p>Changes in this version:</p>
+
+<ul>
+{% for item in site.data.version_mac_beta.release_notes %}
+    <li>
+        {% if item.details %}
+        {{ item.details | markdownify }}
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
+{% endif %}
