@@ -4,12 +4,29 @@ var sendEmail = require('./email');
 
 var moment = require('moment');
 var STACK_SOCIAL_TOKEN = getConfig('STACK_SOCIAL_TOKEN');
+var PADDLE_TOKEN = getConfig('PADDLE_TOKEN');
+var MANUAL_TOKEN = getConfig('MANUAL_TOKEN');
+var ADMIN_TOKEN = getConfig('ADMIN_TOKEN');
 var NEW_LICENSE_NOTIFICATION_EMAIL = require('fs').readFileSync(__dirname + '/../views/emails/license-notification.txt', 'utf8');
 
 module.exports = function(app) {
   app.get('/', (req, res) => {
     res.render('home');
-  })
+  });
+
+  app.get('/licensing/admin/:token/', wrap((ctx, req, res, next) => {
+    if (req.param('token') !== ADMIN_TOKEN) {
+      res.send(403, 'Invalid admin token');
+      return;
+    }
+
+    model.countUnclaimedLicenses(ctx).then((unclaimedCount) => {
+      var info = { unclaimedCount: unclaimedCount };
+      res.render('licensing-status', info);
+    }).catch((e) => {
+      next(e);
+    });
+  }));
 
   app.get('/licensing/callback/stacksocial', wrap((ctx, req, res) => {
     if (req.param('token') !== STACK_SOCIAL_TOKEN) {
@@ -33,8 +50,67 @@ module.exports = function(app) {
       }
 
       model.countUnclaimedLicenses(ctx).then((unclaimedCount) => {
-        var info = { STORE: 'StackSocial', NAME: params.firstName + ' ' + params.lastName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: '94387538747534875', UNCLAIMED: unclaimedCount };
-        return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com' }, NEW_LICENSE_NOTIFICATION_EMAIL, info);
+        var info = { STORE: 'StackSocial', NAME: params.firstName + ' ' + params.lastName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, UNCLAIMED: unclaimedCount };
+        return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com', replyTo: params.email }, NEW_LICENSE_NOTIFICATION_EMAIL, info);
+      });
+    }).done();
+  }));
+
+  app.post('/licensing/callback/paddle', wrap((ctx, req, res) => {
+    if (req.param('token') !== PADDLE_TOKEN) {
+      res.send(403, 'Invalid Paddle token');
+      return;
+    }
+
+    var params = {
+      store: 'Paddle',
+      txn: req.param('txn'),
+      fullName: req.param('name'),
+      message: req.param('message'),
+      email: req.param('email')
+    };
+
+    model.claimLicense(ctx, params).then((license) => {
+      if (license) {
+        res.send(license.licenseCode);
+      } else {
+        res.send(500, 'Out of licenses');
+      }
+
+      model.countUnclaimedLicenses(ctx).then((unclaimedCount) => {
+        var info = { STORE: 'Paddle', NAME: params.fullName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, UNCLAIMED: unclaimedCount };
+        return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com', replyTo: params.email }, NEW_LICENSE_NOTIFICATION_EMAIL, info);
+      });
+    }).done();
+  }));
+
+  app.post('/licensing/callback/manual', wrap((ctx, req, res) => {
+    if (req.param('token') !== MANUAL_TOKEN) {
+      res.send(403, 'Invalid manual token');
+      return;
+    }
+
+    var params = {
+      store: 'manual',
+      txn: '',
+      firstName: req.param('first'),
+      lastName: req.param('last'),
+      fullName: req.param('name'),
+      message: req.param('message'),
+      email: req.param('email'),
+      notes: req.param('notes') || '',
+    };
+
+    model.claimLicense(ctx, params).then((license) => {
+      if (license) {
+        res.send(license.licenseCode);
+      } else {
+        res.send(500, 'Out of licenses');
+      }
+
+      model.countUnclaimedLicenses(ctx).then((unclaimedCount) => {
+        var info = { STORE: 'Manual', NAME: params.fullName || (params.firstName + ' ' + params.lastName), EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, UNCLAIMED: unclaimedCount };
+        return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com', replyTo: params.email }, NEW_LICENSE_NOTIFICATION_EMAIL, info);
       });
     }).done();
   }));
