@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>LiveReload Updates</title>
+    <link>https://s3.amazonaws.com/download.livereload.com/LiveReload-Mac-appcast.xml</link>
+    <description>Recent LiveReload builds.</description>
+    <language>en</language>
+
+<!--     <item>
+      <title>Version 2.3.17</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.17-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>Mon, 16 Jul 2012 10:42:20 +0700</pubDate>
+      <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.17.zip" sparkle:version="2.3.17" length="12774564" type="application/octet-stream" />
+    </item>
+ -->
+    <item>
+      <title>Version 2.3.22</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.22-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>Tue, Apr 9 2013 00:00:00 +0700</pubDate>
+      <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.22.zip" sparkle:version="2.3.22" length="12301123" type="application/octet-stream" />
+    </item>
+
+    <item>
+      <title>Version 2.3.26</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.26-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>Thu, May 12 2013 18:00:00 +0700</pubDate>
+      <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.26.zip" sparkle:version="2.3.26" length="12122637" type="application/octet-stream" />
+    </item>
+
+    <item>
+      <title>Version 2.3.61</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.61-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>Wed, Apr 23 2014 15:00:00 +0700</pubDate>
+      <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.61.zip" sparkle:version="2.3.61" length="29426123" type="application/octet-stream" />
+    </item>
+
+    <item>
+      <title>Version 2.3.64</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.64-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>Wed, May 27 2014 15:00:00 +0700</pubDate>
+      <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.64.zip" sparkle:version="2.3.64" length="31414182" type="application/octet-stream" />
+    </item>
+
+  </channel>
+</rss>

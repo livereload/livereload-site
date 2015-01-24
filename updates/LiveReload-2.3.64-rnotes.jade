@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title What's new in LiveReload?
+    link(href='release-notes-assets-v1/rnotes.css', type='text/css', rel='stylesheet', media='all')
+  body
+    h1 LiveReload 2.3.64
+
+    article
+      // img.float(src='release-notes-assets-v1/compass.png', alt='THIS IS MY NEW SOMETHING', width='150')
+      header Fixed error message parsing for LESS and Compass
+      :markdown
+        File names and line numbers should now be displayed correctly.
+
+      header Fixed Compass
+      :markdown
+        The previous version shipped with a borked Compass bundle, for which I deeply apologise. This one provides a working version, and also updates it to the latest stable version (0.12.6).
+
+      header Compass plugins updated
+      :markdown
+        It also has the latest versions of all bundled Compass plugins:
+
+        * html5-boilerplate 2.1.0
+        * compass-960-plugin 0.10.4
+        * susy 1.0.9
+        * zurb-foundation 4.3.2
+        * compass-colors 0.9.0
+        * fancy-buttons 1.2.0
+        * grid-coordinates 1.2.0
+        * compass-rgbapng 0.2.1
+        * compass-vgrid-plugin 0.4.2
+        * compass-less-plugin 1.0
+        * sassy-buttons 0.2.6
+        * compass-thesquaregrid 0.0.6
+        * compass_formalize 0.0.5
+        * compass-lucid-grid 0.5.1.
+
+    h1 LiveReload 2.3.61
+
+    article
+      // img.float(src='release-notes-assets-v1/compass.png', alt='THIS IS MY NEW SOMETHING', width='150')
+      header Fixed all known crashes and Mavericks issues
+      :markdown
+        ...like 2.3.40, but that version was never released into the autoupdate channel.

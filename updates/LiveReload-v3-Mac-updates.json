@@ -1,0 +1,41 @@
+{
+  "glitterFeedVersion": 1,
+  "versions": [
+    {
+      "versionCode": "3.0.4",
+      "versionDisplayName": "3.0α4",
+      "channels": ["stable"],
+      "requires": ">=0.0.0",
+      "dist": {
+        "url": "https://s3.amazonaws.com/download.livereload.com/LiveReload-mac-3.0a4.zip",
+        "size": 34256156,
+        "sha1": "79b90dc9d53b1013b011aaaf066fbad9c9a00455"
+      },
+      "news": "<p>• LOTS of internal changes, no more 2.x code</p><p>• All compilers updated</p><p>• Initial Mocha testing support</p><p>• URL overriding and import detection works again</p>"
+    },
+    {
+      "versionCode": "3.0.3",
+      "versionDisplayName": "3.0α3",
+      "channels": ["dev"],
+      "requires": ">=0.0.0",
+      "dist": {
+        "url": "https://s3.amazonaws.com/download.livereload.com/LiveReload-mac-3.0a3.zip",
+        "size": 22622504,
+        "sha1": "b909f7f1d0d1af02fe50d3e8c73b026309700ccd"
+      },
+      "news": "<p>• Multiple compiler versions support (see action options).</p><p>• Would you please email alpha@livereload.com with some feedback? Thanks.</p>"
+    },
+    {
+      "versionCode": "3.0.2",
+      "versionDisplayName": "3.0α2",
+      "channels": ["stable"],
+      "requires": ">=0.0.0",
+      "dist": {
+        "url": "https://s3.amazonaws.com/download.livereload.com/LiveReload-mac-3.0a2.zip",
+        "size": 15249555,
+        "sha1": "25c6edf5c066326cd24ba9e3dcc17e6741d13def"
+      },
+      "news": "<p>• Test of autoupdater. Please report any update installation issues.</p>"
+    }
+  ]
+}
