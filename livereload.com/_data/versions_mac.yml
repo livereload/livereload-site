@@ -1,3 +1,13 @@
+- version: "2.3.69"
+  date: 2015-02-04
+  channels:
+    beta: yes
+    production: no
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.69.zip"
+  release_notes:
+    - title: Licensing revamp
+      details: Revamped the licensing subsystem to allow future off-MAS sales and other cool stuff. The entire list of allowed licenses is encoded inside LiveReload as a bloom filter, allowing offline license validation.
+
 - version: "2.3.68"
   date: 2014-01-14
   channels:
