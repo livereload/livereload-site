@@ -19,8 +19,8 @@
 - id: editors
   title: Editors
 
-- id: other
-  title: Other Features
+- id: features
+  title: Features
 
 - id: internals
   title: Under the Hood

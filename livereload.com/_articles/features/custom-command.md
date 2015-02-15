@@ -13,8 +13,8 @@ Example commands:
 *   `rake`
 *   `rake something`
 *   `./my-script`
-*   `echo $(date) &gt;&gt;log` (useless, just to illustrate the idea about sh -c being used)
-*   `cat js/*.js &gt; js/concat.js` (such stuff is best put into a script, though)
+*   `echo $(date) >>log` (useless, just to illustrate the idea about sh -c being used)
+*   `cat js/*.js > js/concat.js` (such stuff is best put into a script, though)
 
 The output is not displayed anywhere, so use command-line growlnotify yourself if you want it (and/or redirect output to a file). (You can still see the output using Console.app, among other LiveReload logging.)
 
@@ -22,7 +22,7 @@ The output is not displayed anywhere, so use command-line growlnotify yourself i
 
 Changes made by the post-processing command won't cause processing to run again to avoid an endless loop.
 
-Because the changes may be reported with a certain delay, there's a grace period of 0.5 seconds after the post-processing command finishes. Changes made during this grace period are considered to be potentially made by the post-processing command, and won't cause processing to run again either.
+Because the changes may be reported with a certain delay, there's a grace period of 0.5 seconds after the post-processing command finishes. Changes made during this grace period are considered to be potentially made by the post-processing command, and won't cause processing to run again.
 
 The grace period can be customized in the post-processing options dialog. It cannot be set to less than 0.01 seconds.
 

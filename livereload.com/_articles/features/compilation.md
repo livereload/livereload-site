@@ -12,4 +12,4 @@ The following compilers are currently supported:
 *   Compiled into JavaScript: CoffeeScript, Eco.
 *   Compiled into HTML: Jade, HAML, Slim.
 
-Internally we're using a plugin-like model, and you can easily add support for additional languages if you're adventurous enough (look at *.lrplugin/Info.plist inside the app bundle). There is no official plugin API yet, however (we need to figure out both technical and App Store policy details).
+Internally we're using a plugin-like model, and you can easily add support for additional languages if you're adventurous enough (look at `*.lrplugin/Info.plist` inside the app bundle). There is no official plugin API yet, however (we need to figure out both technical and App Store policy details).
