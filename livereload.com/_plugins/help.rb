@@ -34,7 +34,8 @@ module Help
               File.dirname(old) + File.extname(old)
             end
           end
-          # puts "relative_path: #{article.relative_path_without_index} => #{article.relative_path}"
+          article.instance_variable_set('@cleaned_relative_path', nil)  # clear cache
+          puts "relative_path: #{article.relative_path_without_index} => #{article.cleaned_relative_path}"
         end
       end
 
