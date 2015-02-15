@@ -21,4 +21,4 @@ Limitations:
 
 The last two limitations will be fixed in one of the upcoming updates.
 
-See [an overview of other remote workflows](http://go.livereload.com/remote).
+See {% ref remote: an overview of other remote workflows %}.

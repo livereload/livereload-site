@@ -9,5 +9,3 @@ LiveReload works wonders with Drupal.
 Drupal 6 is compatible with every version of LiveReload.
 
 Drupal 7 requires LiveReload 2.0 β3 or later to handle @import's correctly. Earlier versions of LiveReload need [livereload Drupal module](http://drupal.org/project/livereload) to handle @import's correctly (LiveReload 2.0 β3+ does not require that module, and we encourage you to disable/uninstall it).
-
-A feature we have in mind _for the future_ is “live database monitoring”: make changes in your site admin, see the effect immediately. Be sure to let us know if you're interested!

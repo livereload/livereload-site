@@ -13,7 +13,7 @@ Pros:
 *   SASS aims to be a reasonably conservative, designer-friendly language
 *   Compass is a higher-level library of mixins, with some common CSS helpers like [reset](http://compass-style.org/reference/compass/reset/), [layout elements](http://compass-style.org/reference/compass/layout/), [typography](http://compass-style.org/reference/compass/typography/), [dealing with CSS3](http://compass-style.org/reference/compass/css3/), [image sprites etc](http://compass-style.org/reference/compass/utilities/) built-in, and a choice of third-party plugins for:
 
-        *   grid systems
+    *   grid systems
     *   CSS frameworks like Twitter Bootstrap or ZURB foundation
     *   all kinds of utility stuff
     *   …check out the [huge list of Compass plugin gems](https://rubygems.org/search?utf8=%E2%9C%93&amp;query=compass)
@@ -27,7 +27,7 @@ Getting started:
 
 *   still looking for a great tutorial to mention here
 
-[More info on using SASS or Compass with LiveReload](http://feedback.livereload.com/knowledgebase/articles/86203-sass-compass)
+{% ref languages/sass: More info on using SASS or Compass with LiveReload %}
 
 ## Want something simple? Take LESS
 
@@ -45,7 +45,7 @@ Not a good choice when:
 *   you're looking for more high-level things than merely making your stylesheet easier to write — if you want someone else to handle browser incompatibilities for you then, again, Compass should be your default choice
 *   you're looking for some more advanced automation of your repetitive CSS work
 
-[More info on using LESS with LiveReload](http://feedback.livereload.com/knowledgebase/articles/86170-less)
+{% ref languages/less: More info on using LESS with LiveReload %}
 
 ## Hacker at heart? Consider Stylus
 

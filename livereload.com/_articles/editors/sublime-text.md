@@ -6,11 +6,14 @@ locations:
 
 Supported features:
 
-*   jumping to a compilation error location.Installation:
+*   jumping to a compilation error location.
+
+Installation:
 
 *   none, should works out of the box as long as Sublime Text 2 is installed into /Applications.
 
-See my screencast:&nbsp;[Sublime Text Workflow That Beats Coda and Espresso](http://tarantsov.com/blog/2012/02/sublime-text-workflow-that-beats-coda-and-espresso/).
+See my screencast: [Sublime Text Workflow That Beats Coda and Espresso](http://tarantsov.com/blog/2012/02/sublime-text-workflow-that-beats-coda-and-espresso/).
+
 Other important notes:
 
 *   There's a ‘livereload’ Sublime Text 2 plugin. It is not affiliated with LiveReload, and is in fact incompatible with LiveReload 2.

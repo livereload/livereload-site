@@ -4,8 +4,6 @@ locations:
   - http://feedback.livereload.com/knowledgebase/articles/86203
 ---
 
-(Also see our [article on choosing a CSS preprocessor language](http://go.livereload.com/csspreproc) if you're not sure which one is for you.)
-
 Both SASS and Compass are fully supported.
 
 ## Partials

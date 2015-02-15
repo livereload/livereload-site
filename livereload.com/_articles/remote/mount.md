@@ -14,4 +14,4 @@ Please configure LiveReload 2 as follows:
 
 SASS/LESS/CoffeeScript/etc will work out of the box with this scenario.
 
-See [an overview of other remote workflows](http://go.livereload.com/remote).
+See {% ref remote: an overview of other remote workflows %}.

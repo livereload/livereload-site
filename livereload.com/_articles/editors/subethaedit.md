@@ -10,4 +10,4 @@ Supported features:
 
 Installation:
 
-*   you need to install SubEthaEdit's command-line tool if you haven't done so already (see Preferences &gt; Advanced).[]()
+*   you need to install SubEthaEdit's command-line tool if you haven't done so already (see Preferences → Advanced).
