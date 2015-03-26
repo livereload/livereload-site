@@ -15,20 +15,23 @@ permalink: /beta/
 {% else %}
 
 <p>
-    <strong>Beta v{{ site.data.version_mac_beta.version }}:</strong>
+    <strong>Download v{{ site.data.version_mac_beta.version }}:</strong>
     <a href="{{ site.data.version_mac_beta.url }}">LiveReload-{{ site.data.version_mac_beta.version }}.zip</a>
 </p>
 
-<p>Changes in this version:</p>
+{% for version in site.data.versions_mac_beta_until_production %}
+    <p>Changes in <strong>{{ version.version }}:</strong></p>
 
-<ul>
-{% for item in site.data.version_mac_beta.release_notes %}
-    <li>
-        {% if item.details %}
-        {{ item.details | markdownify }}
-        {% endif %}
-    </li>
+    <ul>
+    {% for item in version.release_notes %}
+        <li>
+            {% if item.details %}
+            {{ item.details | markdownify }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
 {% endfor %}
-</ul>
 
 {% endif %}
