@@ -1,3 +1,13 @@
+- version: "2.3.70"
+  date: 2015-03-26
+  channels:
+    beta: yes
+    production: no
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.70.zip"
+  release_notes:
+    - title: Better deduplication of the OS X FSEvents bug warnings
+      details: A fix made for a specific customer who presumably had many projects under a folder with broken FSEvents reporting and had a trouble stopping LiveReload from notifying them about the issue. If you're curious, see [more about the bug on our site](http://go.livereload.com/fsevents).
+
 - version: "2.3.69"
   date: 2015-02-04
   channels:
