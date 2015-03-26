@@ -10,18 +10,18 @@ Looks like you are still running the beta version, though, which has now expired
 
 Please try the following:
 
-1\. Delete all copies of LiveReload.app you can find. That includes copies in the Downloads folder and, if you ever tried to build LiveReload from source, the build products.
+1. Delete all copies of LiveReload.app you can find. That includes copies in the Downloads folder and, if you ever tried to build LiveReload from source, the build products.
 
-2\. Optionally, check that no more copies remain by running the following command in the Terminal:
+2. Optionally, check that no more copies remain by running the following command in the Terminal:
 
-<pre>open -b com.livereload.LiveReload</pre>
+        open -b com.livereload.LiveReload
 
-If LiveReload.app is not found, you'll get an error message on your Terminal.
+    If LiveReload.app is not found, you'll get an error message on your Terminal.
 
-If LiveReload.app is found, it will be launched, and you can determine its path by running:
+    If LiveReload.app is found, it will be launched, and you can determine its path by running:
 
-<pre>ps x | grep LiveReload</pre>
+        ps x | grep LiveReload
 
-3\. Reinstall it from the Purchases app on the Mac App Store.
+3. Reinstall it from the Purchases app on the Mac App Store.
 
-Alternatively, if you're short on time, you can simply [install the latest beta](http://go.livereload.com/mac).
+Alternatively, if you're short on time, you can simply [install the latest beta](/beta/).
