@@ -1,3 +1,14 @@
+- version: "2.3.71"
+  date: 2015-04-01
+  channels:
+    beta: yes
+    production: no
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.71.zip"
+  release_notes:
+    - title: ExcludedSuffixes option for plugin authors
+      details: |
+        Setting e.g. `"ExcludedSuffixes": [".min.js"]` (next to Extensions) allows to make plugins for minifiers and postprocessors.
+
 - version: "2.3.70"
   date: 2015-03-26
   channels:
