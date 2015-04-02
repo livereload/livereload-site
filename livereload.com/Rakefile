@@ -2,7 +2,8 @@ S3_BUCKET = 'download.livereload.com'
 
 desc "Publish the web site"
 task :publish do
-    sh 'rsync', '-avz', '--exclude=.git', '--exclude=.DS_Store', '--exclude=.gitignore', '--exclude=Rakefile', './', 'andreyvit_livereload@ssh.phx.nearlyfreespeech.net:/home/public/'
+    sh 's3_website', 'push'
+    # sh 's3cmd', '-r', '-P', '--dry-run', '--no-delete-removed', 'sync', '_site/', "s3://livereload.com/"
 end
 
 desc "Publish the update metadata"
