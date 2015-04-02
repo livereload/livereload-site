@@ -41,5 +41,12 @@
       <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.64.zip" sparkle:version="2.3.64" length="31414182" type="application/octet-stream" />
     </item>
 
+    <item>
+      <title>Version 2.3.71</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.64-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>Wed, May 27 2014 15:00:00 +0700</pubDate>
+      <enclosure url="https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.64.zip" sparkle:version="2.3.64" length="31414182" type="application/octet-stream" />
+    </item>
+
   </channel>
 </rss>

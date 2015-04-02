@@ -1,0 +1,21 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>LiveReload Updates</title>
+    <link>https://s3.amazonaws.com/download.livereload.com/LiveReload-Mac-appcast.xml</link>
+    <description>Recent LiveReload builds.</description>
+    <language>en</language>
+
+    {% for version in site.data.versions_mac_production %}
+    <item>
+      <title>Version {{ version.version }}</title>
+      <sparkle:releaseNotesLink>https://s3.amazonaws.com/download.livereload.com/LiveReload-{{ version.version }}-rnotes.html</sparkle:releaseNotesLink>
+      <pubDate>{{ version.date_tm | date_to_rfc822 }}</pubDate>
+      <enclosure url="{{ version.url }}" sparkle:version="{{ version.version }}" length="{{ version.file_size }}" type="application/octet-stream" />
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

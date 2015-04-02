@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>What's new in LiveReload?</title>
+    <link href="release-notes-assets-v1/rnotes.css" type="text/css" rel="stylesheet" media="all">
+  </head>
+  <body>
+    <h1>LiveReload {{ page.version.version }}</h1>
+    <article>
+      {% comment %} img.float(src='release-notes-assets-v1/compass.png', alt='THIS IS MY NEW SOMETHING', width='150')--> {% endcomment %}
+      {% for item in page.version.encompassed_release_notes %}
+      <header>{{ item.title }}</header>
+      {% if item.details %}
+      {{ item.details | markdownify }}
+      {% endif %}
+      {% endfor %}
+    </article>
+  </body>
+</html>
+
