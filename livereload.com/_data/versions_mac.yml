@@ -2,8 +2,9 @@
   date: 2015-04-01
   channels:
     beta: yes
-    production: no
+    production: yes
   url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.71.zip"
+  file_size: 33437971
   release_notes:
     - title: ExcludedSuffixes option for plugin authors
       details: |
@@ -15,8 +16,10 @@
     beta: yes
     production: no
   url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.70.zip"
+  file_size: 33433080
   release_notes:
     - title: Better deduplication of the OS X FSEvents bug warnings
+      importance: -10
       details: A fix made for a specific customer who presumably had many projects under a folder with broken FSEvents reporting and had a trouble stopping LiveReload from notifying them about the issue. If you're curious, see [more about the bug on our site](http://go.livereload.com/fsevents).
 
 - version: "2.3.69"
@@ -25,8 +28,10 @@
     beta: yes
     production: no
   url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.69.zip"
+  file_size: 32806312
   release_notes:
     - title: Licensing revamp
+      importance: -20
       details: Revamped the licensing subsystem to allow future off-MAS sales and other cool stuff. The entire list of allowed licenses is encoded inside LiveReload as a bloom filter, allowing offline license validation.
 
 - version: "2.3.68"
@@ -35,17 +40,19 @@
     beta: yes
     production: no
   url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.68.zip"
+  file_size: 32508242
   release_notes:
     - title: Crash fixed
       details: LiveReload no longer crashes in certain cases after you close the Compilation Options window.
+      importance: 50
 
 - version: "2.3.64"
   date: 2014-05-27
-  size: 31414182
   channels:
     beta: yes
     production: yes
   url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.64.zip"
+  file_size: 33437971
   release_notes:
     - title: Fixed error message parsing for LESS and Compass
       details: |
@@ -73,3 +80,83 @@
         * compass-thesquaregrid 0.0.6
         * compass_formalize 0.0.5
         * compass-lucid-grid 0.5.1.
+
+- version: "2.3.61"
+  date: 2014-04-23
+  channels:
+    beta: yes
+    production: yes
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.61.zip"
+  file_size: 29426123
+  release_notes:
+    - title: Fixed all known crashes and Mavericks issues
+      details: Fixed all known crashes and Mavericks issues, like v2.3.40, but that version was never released into the autoupdate channel.
+
+    - title: CoffeeScript 1.7
+      details: |
+        * Leading . now closes all open calls.
+        * `**`, `//` and `%%` operators and `...` expansion in parameter lists and destructuring expressions
+        * Multiline strings are now joined by a single space and ignore all indentation
+
+    - title: LESS 1.7.0
+      details: |
+        Lots of changes, see [CHANGELOG.md on GitHub](https://github.com/less/less.js/blob/master/CHANGELOG.md).
+
+    - title: Jade 1.3.1
+      details: |
+        Lots of changes, see [History.md on GitHub](https://github.com/visionmedia/jade/blob/master/History.md).
+
+    - title: Other bundled compilers
+      details: |
+        Other compilers and libraries updated to their latest versions; nothing major here.
+
+- version: "2.3.26"
+  date: 2013-05-12
+  channels:
+    beta: yes
+    production: yes
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.26.zip"
+  file_size: 12122637
+  release_notes:
+    - title: CoffeeScript 1.6 with source maps
+      details: LiveReload now supports source maps in CoffeeScript; enable in compilation options. A screencast is coming today.
+
+    - title: HAML v4
+      details: |
+        Updated HAML to v4, which is mostly backwards-compatible, but do check [the official blog post about HAML 4](http://blog.haml.info/post/42998475354/haml-4-0-has-been-released).
+
+    - title: ZURB Foundation v4
+      details: |
+        Please open a support request if this change is unwelcome. See the [migration guide](http://foundation.zurb.com/migration.php).
+
+    - title: Other bundled compilers
+      details: |
+        Other compilers and libraries updated to their latest versions; nothing major here.
+
+    - title: Hidden port setting
+      details: |
+        If you know what you're doing, you can now use [a hidden setting to change LiveReload's port number](http://feedback.livereload.com/knowledgebase/articles/195869-how-to-change-the-port-number-livereload-listens-o).
+
+    - title: LR 2.3.27 on the Mac App Store
+      details: |
+        LiveReload has also been updated on the Mac App Store, finally! It is called 2.3.27 there, but it's in every way the same as this 2.3.26 update. It's 30% off for a few more days.
+
+- version: "2.3.22"
+  date: 2013-04-09
+  channels:
+    beta: yes
+    production: yes
+  file_size: 12301123
+
+- version: "2.3.17"
+  date: 2012-07-16
+  channels:
+    beta: yes
+    production: yes
+  file_size: 12774564
+
+# key for 'importance':
+#  100   important feature
+#   50   important bug fixed
+#  -10   geeky stuff
+#  -20   internal changes
