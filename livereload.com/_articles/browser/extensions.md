@@ -1,6 +1,7 @@
 ---
 title: How do I install and use the browser extensions?
 order: 10
+permalink: /extensions/
 locations:
   - http://feedback.livereload.com/knowledgebase/articles/86242
 ---
