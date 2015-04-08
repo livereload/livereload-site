@@ -9,14 +9,14 @@ permalink: /beta/
 <p>
     There is no beta version at the moment.
     Please download <strong>stable v{{ site.data.version_mac_production.version }}:</strong>
-    <a href="{{ site.data.version_mac_production.url }}">LiveReload-{{ site.data.version_mac_production.version }}.zip</a>
+    <a class="download-mac-beta" href="{{ site.data.version_mac_production.url }}">LiveReload-{{ site.data.version_mac_production.version }}.zip</a>
 </p>
 
 {% else %}
 
 <p>
     <strong>Download v{{ site.data.version_mac_beta.version }}:</strong>
-    <a href="{{ site.data.version_mac_beta.url }}">LiveReload-{{ site.data.version_mac_beta.version }}.zip</a>
+    <a class="download-mac-beta" href="{{ site.data.version_mac_beta.url }}">LiveReload-{{ site.data.version_mac_beta.version }}.zip</a>
 </p>
 
 {% for version in site.data.versions_mac_beta_until_production %}

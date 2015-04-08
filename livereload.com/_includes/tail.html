@@ -54,9 +54,11 @@
     mpmetrics.track_links(className, name);
   }
 
-  mpmetrics.track('Load homepage');
+  {% if page.analytics_event %}mpmetrics.track('{{page.analytics_event}}');{% endif %}
 
   trackLinkAsPageView('.download-mas', 'Download', '/download/mac-app-store');
+  trackLinkAsPageView('.download-mac-offmas', 'Mac off-MAS', '/download/mac');
+  trackLinkAsPageView('.download-mac-beta', 'Mac Beta', '/download/mac/beta');
   trackLinkAsPageView('.download-win', 'Download for Windows', '/download/windows');
 
   trackLinkAsEvent('.binaryage-link-totalfinder', 'Go to BinaryAge', 'TotalFinder');
