@@ -9,13 +9,13 @@ locations:
 
 Download and open to install:
 
-* [Safari extension 2.0.9](http://download.livereload.com/2.0.9/LiveReload-2.0.9.safariextz) — note: due to Safari API limitations, browser extension **does not work with file: URLs**; if you're working with local files via file: URL, please use Chrome or insert the snippet
+* [Safari extension 2.1.0](http://download.livereload.com/2.1.0/LiveReload-2.1.0.safariextz) — note: due to Safari API limitations, browser extension **does not work with file: URLs**; if you're working with local files via file: URL, please use Chrome or {% ref browser/script-tag: insert the SCRIPT snippet %}.
 
 * [Chrome extension on the Chrome Web Store](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) — **if you want to use it with local files,** be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation.
 
-* [Firefox extension 2.0.8](http://download.livereload.com/2.0.8/LiveReload-2.0.8.xpi)
+* [Firefox extension 2.1.0](http://download.livereload.com/2.1.0/LiveReload-2.1.0.xpi) — warning: older extensions won't autoupdate; please remove the old one and download and install the new one manually.
 
-Extensions 2.x will be updated automatically.
+Extensions will be updated automatically.
 
 ## Using extensions
 
@@ -29,6 +29,8 @@ The icon indicates LiveReload status of the current tab (unavailable / disabled 
 If your page already includes LiveReload via a SCRIPT tag, it is considered to be in 'enabled' state initially. You can still disable or reenable it using the toolbar button.
 
 ## What's new
+
+2.1.0: Fixed a bunch of bugs.
 
 2.0.9: Updated toolbar icons to the ones contributed by Vadim Makeev (pepelsbey). Thanks! Chrome extension published on the Chrome Web Store.
 
