@@ -6,3 +6,5 @@ Store: STORE
 Transaction: TXN
 
 Unclaimed license codes: UNCLAIMED
+
+Raw callback parameters: RAW

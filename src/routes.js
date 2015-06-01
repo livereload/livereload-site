@@ -67,8 +67,10 @@ module.exports = function(app) {
       txn: req.param('txn'),
       fullName: req.param('name'),
       message: req.param('message'),
-      email: req.param('email')
+      email: req.param('email'),
+      raw: JSON.stringify(req.body)
     };
+    var pretty = JSON.stringify(req.body, null, 2);
 
     model.claimLicense(ctx, params).then((license) => {
       if (license) {
@@ -78,7 +80,7 @@ module.exports = function(app) {
       }
 
       model.countUnclaimedLicenses(ctx).then((unclaimedCount) => {
-        var info = { STORE: 'Paddle', NAME: params.fullName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, UNCLAIMED: unclaimedCount };
+        var info = { STORE: 'Paddle', NAME: params.fullName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, UNCLAIMED: unclaimedCount, RAW: pretty };
         return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com', replyTo: params.email }, NEW_LICENSE_NOTIFICATION_EMAIL, info);
       });
     }).done();
