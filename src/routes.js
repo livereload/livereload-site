@@ -96,7 +96,9 @@ module.exports = function(app) {
     var paramKeys = Object.keys(params);
     var paramPairs = [];
     for (var i = 0; i < paramKeys.length; i++) {
-      if (paramKeys[i] === 'raw') continue;
+      if (paramKeys[i] == 'raw') {
+        continue;
+      }
       paramPairs.push("" + paramKeys[i] + ": " + params[paramKeys[i]]);
     };
     var paramsText = paramPairs.join("\n");
