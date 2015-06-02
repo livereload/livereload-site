@@ -68,9 +68,45 @@ module.exports = function(app) {
       fullName: req.param('name'),
       message: req.param('message'),
       email: req.param('email'),
-      raw: JSON.stringify(req.body)
+      raw: JSON.stringify(req.body),
+      currency: req.param('p_currency'),
+      price: req.param('p_price'),
+      coupon: stringOrNull(req.param('p_coupon')),
+      savings: req.param('p_coupon_savings'),
+      additional: req.param('p_coupon_savings'),
+      country: req.param('p_coupon_savings'),
+      gross: req.param('p_sale_gross'),
+      tax: req.param('p_tax_amount'),
+      fee: req.param('p_paddle_fee')
     };
     var pretty = JSON.stringify(req.body, null, 2);
+
+    var earningsText = req.param('p_earnings');
+    if (typeof(earningsText) === 'string') {
+      try {
+        var earnings = JSON.parse(earningsText);
+        if (earnings && earnings['128']) {
+          params.earnings = earnings['128'];
+        }
+      } catch (e) {
+        console.warn("Cannot parse earnings string");
+      }
+    }
+
+    var paramKeys = Object.keys(params);
+    var paramPairs = [];
+    for (var i = 0; i < paramKeys.length; i++) {
+      paramPairs.push("" + paramKeys[i] + ": " + params[paramKeys[i]]);
+    };
+    var paramsText = paramPairs.join("\n");
+
+    var priceAndCoupon = "" + params.price + " " + params.currency;
+    if (params.coupon) {
+      priceAndCoupon = priceAndCoupon + " (" + params.coupon + ")";
+    }
+
+    var earningsString = params.earnings + " " + params.currency;
+    var grossString = params.gross + " " + params.currency + " (tax " + params.tax + " " + params.currency + ", fee " + params.fee + " " + params.currency + ")";
 
     model.claimLicense(ctx, params).then((license) => {
       if (license) {
@@ -80,7 +116,7 @@ module.exports = function(app) {
       }
 
       model.countUnclaimedLicenses(ctx).then((unclaimedCount) => {
-        var info = { STORE: 'Paddle', NAME: params.fullName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, UNCLAIMED: unclaimedCount, RAW: pretty };
+        var info = { STORE: 'Paddle', NAME: params.fullName, EMAIL: params.email, DATE: moment().format('ddd, MMM D, YYYY HH:mm Z'), LICENSE_CODE: license.licenseCode, TXN: params.txn, PRICE: priceAndCoupon, EARNINGS: earningsString, GROSS: grossString, UNCLAIMED: unclaimedCount, RAW: pretty, PARAMS: paramsText };
         return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com', replyTo: params.email }, NEW_LICENSE_NOTIFICATION_EMAIL, info);
       });
     }).done();
@@ -147,4 +183,13 @@ module.exports = function(app) {
       return sendEmail({ to: 'andrey@tarantsov.com', from: 'bot@livereload.com', replyTo: params.email }, NEW_BETA_SIGNUP_EMAIL, info);
     }).done();
   }));
+}
+
+function stringOrNull(value) {
+  var string = "" + value;
+  if (string.length == 0) {
+    return null;
+  } else {
+    return string;
+  }
 }

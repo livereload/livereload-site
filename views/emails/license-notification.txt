@@ -4,7 +4,14 @@ NAME <EMAIL>
 LICENSE_CODE
 Store: STORE
 Transaction: TXN
+Price: PRICE
+Earnings: EARNINGS
+Gross: GROSS
 
 Unclaimed license codes: UNCLAIMED
 
-Raw callback parameters: RAW
+--- Details ---
+
+PARAMS
+
+Raw callback data: RAW
