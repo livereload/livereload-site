@@ -96,7 +96,7 @@ module.exports = function(app) {
     var paramKeys = Object.keys(params);
     var paramPairs = [];
     for (var i = 0; i < paramKeys.length; i++) {
-      if (paramKeys[i] == 'raw') {
+      if (('' + paramKeys[i]) == 'raw') {
         continue;
       }
       paramPairs.push("" + paramKeys[i] + ": " + params[paramKeys[i]]);
