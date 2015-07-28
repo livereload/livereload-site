@@ -1,3 +1,15 @@
+- version: "2.3.82"
+  date: 2015-07-28
+  channels:
+    production: no
+    beta: yes
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.82.zip"
+  file_size: 30197804
+  release_notes:
+    - title: Embedded Node.js updated
+      details: |
+        To match the version released on the Mac App Store, this release updates Node.js binary to the latest stable one.
+
 - version: "2.3.76"
   date: 2015-06-23
   channels:
