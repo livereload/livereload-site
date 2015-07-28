@@ -37,6 +37,7 @@ RewriteRule ^support/question[/.,;)]*$ http://support.livereload.com/support/tic
 RewriteRule ^support/suggestion[/.,;)]*$ http://support.livereload.com/support/tickets/new [L,R]
 RewriteRule ^purchase[/.,;)]*$ https://pay.paddle.com/checkout/489469 [L,R]
 RewriteRule ^licensing/volume[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/87911-can-i-purchase-a-license-for-my-entire-team-compan [L,R]
+RewriteRule ^legacy/snow-leopard/upgrade/[/.,;)]*$ http://livereload.com/ [L,R]
 
 RewriteRule ^reference/compilers/less[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/86170-less [L,R]
 RewriteRule ^reference/preferences/rubies[/.,;)]*$ http://feedback.livereload.com/knowledgebase/articles/203948 [L,R]
