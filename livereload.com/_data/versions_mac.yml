@@ -1,3 +1,16 @@
+- version: "2.3.76"
+  date: 2015-06-23
+  channels:
+    production: no
+    snowleo: yes
+  url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-SnowLeopard-2.3.76.zip"
+  file_size: 0
+  release_notes:
+    - title: 2.3.74 updated for Snow Leopard
+      details: |
+        The official builds of LiveReload are dropping support of OS X 10.6 Snow Leopard.
+        For those still running it, I'm providing a separate build.
+
 - version: "2.3.74"
   date: 2015-04-14
   channels:

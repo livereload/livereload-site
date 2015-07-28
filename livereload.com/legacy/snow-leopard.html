@@ -1,0 +1,25 @@
+---
+title: LiveReload for OS X 10.6 Snow Leopard
+layout: page
+permalink: /legacy/snow-leopard/
+---
+
+<p>
+    <strong>Download v{{ site.data.version_mac_snowleo.version }}:</strong>
+    <a class="download-legacy-snowleo" href="{{ site.data.version_mac_snowleo.url }}">LiveReload-SnowLeopard-{{ site.data.version_mac_snowleo.version }}.zip</a>
+</p>
+
+{% for version in site.data.versions_mac_snowleo %}
+    <p>Changes in <strong>{{ version.version }}:</strong></p>
+
+    <ul>
+    {% for item in version.release_notes %}
+        <li>
+            {% if item.details %}
+            {{ item.details | markdownify }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endfor %}
