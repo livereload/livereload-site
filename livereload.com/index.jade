@@ -12,7 +12,7 @@ header
         p.subtitle (a happy land where browsers don't need a Refresh button)
         h2 CSS edits and image changes apply live.
         h2
-          :markdown
+          :marked
             CoffeeScript, SASS, LESS [and others](#compilers) just work.
 
         p.citizenship
@@ -28,7 +28,7 @@ header
       img(src='/images/screenshot.png')
     .right
       h2 What does LiveReload do?
-      :markdown
+      :marked
         LiveReload monitors changes in the file system. As soon as you save a file, it is [preprocessed as needed](#compilers), and the browser is refreshed.
 
         Even cooler, when you change a CSS file or an image, the browser is updated instantly without reloading the page.
@@ -50,7 +50,7 @@ header
         span(style="width: 2.66em; display: inline-block; font-weight: normal") or
         a.buy.paddle_button(href='#download', data-product="489469", data-theme="light") Buy directly from me
 
-      :markdown
+      :marked
         Requires OS X 10.6 or later. $9.99. 64-bit only. [Got old 32-bit Mac?](http://go.livereload.com/32bit)
 
         Don't miss: [Getting started](#getting-started), [compilers](#compilers), [plugins](#plugins), [post-processing](#postprocessing), [support](#support).
@@ -63,12 +63,12 @@ header
         span Windows?
         a.download-win(href='http://download.livereload.com/windows/LiveReloadSetup.exe') Try LiveReload 0.9.2 Alpha
 
-      :markdown
+      :marked
         (Updates automatically. Requires Windows 7 or later. [Getting Started info here](http://go.livereload.com/win).)
 
       h3 Linux?
 
-      :markdown
+      :marked
         Try [guard-livereload](https://github.com/guard/guard-livereload), they use our browser extensions and are pretty cool. Not limited to Linux either; if GUI is not your thing, guard-livereload is the next best choice.
 
     .right
@@ -107,7 +107,7 @@ header
     .left
       h2 Wanna see the source?
 
-      :markdown
+      :marked
         The full source code of LiveReload 2 is available on GitHub: [LiveReload2](https://github.com/livereload/LiveReload2) (Mac on master branch, Windows on node branch), [livereload-plugins](https://github.com/livereload/livereload-plugins), [livereload-js](https://github.com/livereload/livereload-js), [livereload-extensions](https://github.com/livereload/livereload-extensions).
 
         Why? Because curiosity is the most basic and important quality of good developers. I believe that everyone benefits from being able to study and tinker with other people's software.
@@ -129,7 +129,7 @@ header
     .left
       h2 Getting Started, or<br>N things you need to know about LiveReload
 
-      :markdown
+      :marked
         1. LiveReload lives in your menu bar.
 
         2. It works with Safari, Chrome, Firefox and Mobile Safari. Also Opera if you [enable web sockets](http://techdows.com/2010/12/enable-websockets-in-opera-11.html).
@@ -162,7 +162,7 @@ header
     .left
       h2 Compilers
 
-      :markdown
+      :marked
         If you are using stuff like CoffeeScript, SASS or LESS (and you should!), LiveReload will compile them for you all right. Just turn it on; LiveReload is controlled by two main checkboxes, so you won't get lost.
 
         LiveReload ships with the following compilers: LESS, SASS, Compass, Stylus, CoffeeScript, IcedCoffeeScript, Eco, SLIM, HAML, Jade.
@@ -179,7 +179,7 @@ header
     .left
       h2 Plugins
 
-      :markdown
+      :marked
         The compilers supported by LiveReload aren't set in stone; they are provided by bundled plugins, and you can add your own ones too. (We even look for them in Dropbox/Library, to save you some trouble if you're using Dropbox and multiple Macs.)
 
         No coding is invoked: write a JSON manifest, copy required files and there you go. You can find all the docs you need in [livereload-plugins](https://github.com/livereload/livereload-plugins) repository.
@@ -190,7 +190,7 @@ header
     .left
       h2 Post-processing
 
-      :markdown
+      :marked
         LiveReload can invoke a Terminal command after processing changes. Run a Rake/Cake task, a Shell script or anything else you need.
 
         Protip: If you're working with some Ruby stuff and want to use RVM, pick the correct Ruby interpreter in compilation options (which also affect post-processing).
@@ -201,7 +201,7 @@ header
     .left
       h2 Support
 
-      :markdown
+      :marked
         Use the Help & Support button here or visit [feedback.livereload.com](http://feedback.livereload.com) to read knowledge base articles, vote for features and contact the developers.
 
 
@@ -210,14 +210,14 @@ header
     .left
       h2 Acknowledgements
 
-      :markdown
+      :marked
         LiveReload has been inspired by XRefresh, an old Firebug plugin made by our friends at BinaryAge. Their [TotalFinder](http://totalfinder.binaryage.com/) product is awesome, and you might find [FireQuery](http://firequery.binaryage.com/) and [other free tools](http://www.binaryage.com/) useful too.
 
 
   section
     .left
       h2 Who are we?
-      :markdown
+      :marked
         LiveReload 2.x is developed by Andrey Tarantsov, with an occasional help by Timofey Vasenin.
 
         You can read [the history of the first year of LiveReload here](http://tarantsov.com/blog/2011/07/the-story-of-livereload-the-first-anniversary).
