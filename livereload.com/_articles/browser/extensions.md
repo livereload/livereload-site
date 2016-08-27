@@ -14,7 +14,7 @@ Download and open to install:
 
 * [Chrome extension on the Chrome Web Store](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) — **if you want to use it with local files,** be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation.
 
-* [Firefox extension 2.1.0](http://download.livereload.com/2.1.0/LiveReload-2.1.0.xpi) — warning: older extensions won't autoupdate; please remove the old one and download and install the new one manually.
+* [Firefox extension 2.1.0](https://addons.mozilla.org/en-US/firefox/addon/livereload/) from addons.mozilla.org.
 
 Extensions will be updated automatically.
 
