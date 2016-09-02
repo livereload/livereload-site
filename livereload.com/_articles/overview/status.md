@@ -1,21 +1,15 @@
 ---
-title: What's the status of LiveReload? (3.x, 2.x, support)
+title: What's the status of LiveReload?
 locations:
   - http://feedback.livereload.com/knowledgebase/articles/169208
 ---
 
-(As of October 2014.)
+(As of September 2016.)
 
-## Version 3.x
+I've made numerous unsuccessful attempts to rebuild LiveReload from scratch, calling it LiveReload 3. This project has suffered from a lot of things, including my burnout and a “second project syndrome”.
 
-I've been working on version 3.0, the next major cross-platform release, since summer 2012\. It will be a free upgrade, but I have no release date to announce.
+I've since abandoned this approach and now working on incremental updates to LiveReload 2. I'm not yet sure if I'll release it as version 2.x or version 3.0, but we're finally moving somewhere.
 
-## Version 2.x on the Mac
-
-In maintenance mode. Generally works pretty well, including on Yosemite.
-
-## Support
-
-Support is on hiatus in September and October 2014. Planned to be resumed by the end of October.
+Despite how it may occasionally look, LiveReload is not abandoned, and I'm interested in further development.
 
 A.
