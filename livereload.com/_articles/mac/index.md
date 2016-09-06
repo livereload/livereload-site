@@ -6,9 +6,21 @@ locations:
 
 **Step 1.** Get and install the app.
 
-* Download the [latest version](http://download.livereload.com/LiveReload-2.3.66.zip) (v2.3.66) or the [previous version](http://download.livereload.com/LiveReload-2.3.64.zip) (v2.3.64) — both provide an unlimited free trial and should recognize your Mac App Store license if you have one
-* [Purchase from the Mac App Store](http://itunes.apple.com/us/app/livereload/id482898991?mt=12) (v2.3.27)
-* [Is my Mac compatible with LiveReload?](/mac/compatibility/)
+Download the <a href="{{ site.data.version_mac_production.url }}"><strong>latest</strong> v{{ site.data.version_mac_production.version }}</a>. It provides an unlimited free trial and should recognize your Mac App Store license if you have one.
+
+Additional links:
+
+<ul>
+
+{% if site.data.version_mac_beta.version != site.data.version_mac_production.version %}
+<li><a href="/beta">Details about <strong>beta</strong> v{{ site.data.version_mac_beta.version }}</a></li>
+{% endif %}
+
+<li><a href="http://itunes.apple.com/us/app/livereload/id482898991?mt=12"><strong>Mac App Store</strong> v{{ site.data.version_mac_mas.version }}</a></li>
+
+<li><a href="/mac/compatibility/">Is my Mac compatible with LiveReload?</a></li>
+
+</ul>
 
 **Step 2.** Add your project folder to LiveReload (via drag-n-drop or by clicking the “+” button).
 
