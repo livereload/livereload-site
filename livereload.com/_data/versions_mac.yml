@@ -1,7 +1,7 @@
 - version: "2.3.84"
   date: 2016-09-06
   channels:
-    production: no
+    production: yes
     beta: yes
   url: "https://s3.amazonaws.com/download.livereload.com/LiveReload-2.3.84.zip"
   file_size: 30083006
