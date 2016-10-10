@@ -1,6 +1,0 @@
-Subject: Beta: NAME <EMAIL>
-
-ABOUT
----
-LiveReload APP_VERSION (APP_PLATFORM)
-NAME <EMAIL>
